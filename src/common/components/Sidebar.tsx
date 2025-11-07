@@ -9,20 +9,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import styled from "styled-components";
 
-// 구현된 페이지 경로 목록
-const IMPLEMENTED_PAGES = [
-  "/main",
-  "/my",
-  "/student-support/scholarship/apply",
-  "/academic/registration/apply",
-  "/academic/grades/semester",
-  "/facilities/library/room",
-  "/certificates/enrollment",
-  "/professor/courses/list",
-  "/professor/grades/input",
-  "/professor/research/projects",
-];
-
 const SidebarContainer = styled.aside`
   width: 280px;
   height: 100vh;
@@ -113,21 +99,6 @@ const MenuLink = styled(Link)<{ $isActive: boolean }>`
   }
 `;
 
-const DisabledMenuItem = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 10px 12px;
-  background: transparent;
-  border-radius: 6px;
-  color: #adb5bd;
-  cursor: not-allowed;
-  margin: 2px 0;
-  opacity: 0.5;
-  box-sizing: border-box;
-  min-width: 0;
-`;
-
 const MenuLabel = styled(Text)`
   flex: 1;
   font-size: 14px;
@@ -147,38 +118,17 @@ interface MenuItemComponentProps {
   depth?: number;
 }
 
-// 메뉴 아이템 또는 그 하위 메뉴 중 하나라도 구현되어 있는지 확인
-function hasAnyImplementedPage(item: MenuItem): boolean {
-  if (item.path && IMPLEMENTED_PAGES.includes(item.path)) {
-    return true;
-  }
-  if (item.children) {
-    return item.children.some((child) => hasAnyImplementedPage(child));
-  }
-  return false;
-}
-
 function MenuItemComponent({ item, depth = 0 }: MenuItemComponentProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isActive = pathname === item.path;
   const hasChildren = item.children && item.children.length > 0;
-  const isImplemented = item.path
-    ? IMPLEMENTED_PAGES.includes(item.path)
-    : false;
-  const hasImplementedChildren = hasChildren
-    ? hasAnyImplementedPage(item)
-    : false;
 
   if (hasChildren) {
     return (
       <MenuItemContainer $depth={depth}>
         <MenuButton $isActive={isActive} onClick={() => setIsOpen(!isOpen)}>
-          <MenuLabel
-            style={{ color: hasImplementedChildren ? "inherit" : "#adb5bd" }}
-          >
-            {item.label}
-          </MenuLabel>
+          <MenuLabel>{item.label}</MenuLabel>
           <IconWrapper>
             {isOpen ? <ChevronDownIcon /> : <ChevronRightIcon />}
           </IconWrapper>
@@ -200,15 +150,9 @@ function MenuItemComponent({ item, depth = 0 }: MenuItemComponentProps) {
 
   return (
     <MenuItemContainer $depth={depth}>
-      {isImplemented ? (
-        <MenuLink href={item.path!} $isActive={isActive}>
-          <MenuLabel>{item.label}</MenuLabel>
-        </MenuLink>
-      ) : (
-        <DisabledMenuItem>
-          <MenuLabel>{item.label}</MenuLabel>
-        </DisabledMenuItem>
-      )}
+      <MenuLink href={item.path!} $isActive={isActive}>
+        <MenuLabel>{item.label}</MenuLabel>
+      </MenuLink>
     </MenuItemContainer>
   );
 }

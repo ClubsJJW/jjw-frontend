@@ -1,8 +1,13 @@
 "use client";
 
-import styled from "styled-components";
-import { Sidebar } from "./Sidebar";
 import { navigationMenu } from "@/common/types/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import styled from "styled-components";
+import { BASE_URL } from "../constants";
+import { useAuth } from "../providers/AuthProvider";
+import { connectSSE } from "../utils/sseUtil";
+import { Sidebar } from "./Sidebar";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -27,6 +32,33 @@ interface MainLayoutProps {
 }
 
 export function MainLayout({ children }: MainLayoutProps) {
+  const { getMemberId } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    // memberId 가져오기 (로그인: profile.id, 비로그인: 익명 ID)
+    const memberId = getMemberId();
+
+    // SSE 연결 시 memberId를 쿼리 파라미터로 전달
+    let eventSource = new EventSource(
+      `${BASE_URL}/sse/connect?memberId=${memberId}`
+    );
+
+    const callConnectSSE = async () => {
+      eventSource = await connectSSE(eventSource, (rawData) => {
+        const data = JSON.parse(rawData);
+        // console.log(data);
+        router.push(data.url);
+      });
+    };
+
+    callConnectSSE();
+
+    return () => {
+      eventSource?.close();
+    };
+  }, []);
+
   return (
     <LayoutContainer>
       <Sidebar menuItems={navigationMenu} />
