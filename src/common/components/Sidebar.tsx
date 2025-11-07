@@ -215,6 +215,11 @@ export function Sidebar({ menuItems }: SidebarProps) {
     router.push("/login");
   };
 
+  // 로그인하지 않은 경우 홈 메뉴만 필터링
+  const filteredMenuItems = isLoggedIn
+    ? menuItems
+    : menuItems.filter((item) => item.path === "/main");
+
   return (
     <SidebarContainer>
       <SidebarHeader>
@@ -228,7 +233,7 @@ export function Sidebar({ menuItems }: SidebarProps) {
       <SidebarContent>
         <nav>
           <MenuList>
-            {menuItems.map((item) => (
+            {filteredMenuItems.map((item) => (
               <MenuItemComponent key={item.id} item={item} />
             ))}
           </MenuList>
