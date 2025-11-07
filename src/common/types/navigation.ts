@@ -342,11 +342,6 @@ export const navigationMenu: MenuItem[] = [
     label: "커뮤니티",
     children: [
       {
-        id: "community-notice",
-        label: "공지사항",
-        path: "/community/notice",
-      },
-      {
         id: "community-news",
         label: "학교 소식",
         path: "/community/news",
