@@ -281,10 +281,10 @@ export default function ProfessorResearchProjectsPage() {
                 color="txt-black-darker"
                 style={{ marginBottom: "8px", display: "block" }}
               >
-                연구 기관: 정보통신기획평가원 | 과제 번호: IITP-2024-002345
+                연구 기관: 정보통신기획평가원 | 과제 번호: IITP-2025-002345
               </Text>
               <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
-                연구 기간: 2024.01.01 ~ 2025.12.31 (2년)
+                연구 기간: 2025.01.01 ~ 2026.12.31 (2년)
               </Text>
             </div>
             <Box style={{ display: "flex", gap: "12px" }}>
@@ -352,10 +352,10 @@ export default function ProfessorResearchProjectsPage() {
                 color="txt-black-darker"
                 style={{ marginBottom: "8px", display: "block" }}
               >
-                연구 기관: 교육부 | 과제 번호: MOE-2024-003456
+                연구 기관: 교육부 | 과제 번호: MOE-2025-003456
               </Text>
               <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
-                연구 기간: 2024.03.01 ~ 2024.12.31 (1년)
+                연구 기간: 2025.03.01 ~ 2025.12.31 (1년)
               </Text>
             </div>
             <Box style={{ display: "flex", gap: "12px" }}>
@@ -480,7 +480,7 @@ export default function ProfessorResearchProjectsPage() {
             </thead>
             <tbody>
               <tr>
-                <td>2024.02.14</td>
+                <td>2025.08.14</td>
                 <td>딥러닝 NLP 시스템</td>
                 <td>연구 장비</td>
                 <td>15,000,000원</td>
@@ -494,7 +494,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.12</td>
+                <td>2025.08.12</td>
                 <td>블록체인 분산 시스템</td>
                 <td>인건비</td>
                 <td>3,500,000원</td>
@@ -508,7 +508,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.10</td>
+                <td>2025.08.10</td>
                 <td>딥러닝 NLP 시스템</td>
                 <td>출장비</td>
                 <td>2,800,000원</td>
@@ -522,7 +522,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.08</td>
+                <td>2025.08.08</td>
                 <td>AI 윤리 연구</td>
                 <td>재료비</td>
                 <td>850,000원</td>
@@ -536,7 +536,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.05</td>
+                <td>2025.08.05</td>
                 <td>블록체인 분산 시스템</td>
                 <td>회의비</td>
                 <td>450,000원</td>
@@ -585,7 +585,7 @@ export default function ProfessorResearchProjectsPage() {
             color="txt-black-darker"
             style={{ marginBottom: "12px", display: "block" }}
           >
-            게재일: 2024.01.15
+            게재일: 2025.01.15
           </Text>
           <Box style={{ display: "flex", gap: "12px" }}>
             <Button text="논문 보기" size="m" colorVariant="blue" />
@@ -615,7 +615,7 @@ export default function ProfessorResearchProjectsPage() {
             color="txt-black-darker"
             style={{ marginBottom: "12px", display: "block" }}
           >
-            게재일: 2023.11.20
+            게재일: 2024.11.20
           </Text>
           <Box style={{ display: "flex", gap: "12px" }}>
             <Button text="논문 보기" size="m" colorVariant="blue" />
@@ -645,7 +645,7 @@ export default function ProfessorResearchProjectsPage() {
             color="txt-black-darker"
             style={{ marginBottom: "12px", display: "block" }}
           >
-            게재일: 2023.09.30
+            게재일: 2024.09.30
           </Text>
           <Box style={{ display: "flex", gap: "12px" }}>
             <Button text="논문 보기" size="m" colorVariant="blue" />
@@ -672,7 +672,7 @@ export default function ProfessorResearchProjectsPage() {
               <tr>
                 <td>딥러닝 기반 자연어 처리 시스템 개발</td>
                 <td>연차 보고서</td>
-                <td>2024.03.01</td>
+                <td>2025.09.01</td>
                 <td style={{ color: "#f57c00", fontWeight: "bold" }}>작성중</td>
                 <td>
                   <Button text="작성하기" size="s" colorVariant="blue" />
@@ -681,7 +681,7 @@ export default function ProfessorResearchProjectsPage() {
               <tr>
                 <td>블록체인 기반 분산 시스템 연구</td>
                 <td>분기 보고서</td>
-                <td>2024.04.01</td>
+                <td>2025.10.01</td>
                 <td style={{ color: "#616161" }}>미작성</td>
                 <td>
                   <Button text="작성하기" size="s" colorVariant="blue" />
@@ -690,7 +690,7 @@ export default function ProfessorResearchProjectsPage() {
               <tr>
                 <td>AI 윤리 및 책임성 연구</td>
                 <td>중간 보고서</td>
-                <td>2024.02.10</td>
+                <td>2025.08.10</td>
                 <td style={{ color: "#388e3c", fontWeight: "bold" }}>
                   제출완료
                 </td>

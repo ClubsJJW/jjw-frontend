@@ -29,6 +29,7 @@ const SidebarContainer = styled.aside`
   background: #f8f9fa;
   border-right: 1px solid #e9ecef;
   overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   left: 0;
   top: 0;
@@ -44,6 +45,7 @@ const SidebarHeader = styled.div`
 const SidebarContent = styled.div`
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const SidebarFooter = styled.div`
@@ -61,10 +63,14 @@ const MenuList = styled.ul`
   list-style: none;
   padding: 8px 0;
   margin: 0;
+  overflow: hidden;
 `;
 
 const MenuItemContainer = styled.li<{ $depth: number }>`
   padding-left: ${(props) => props.$depth * 16 + 12}px;
+  padding-right: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
 `;
 
 const MenuButton = styled.button<{ $isActive: boolean }>`
@@ -80,6 +86,8 @@ const MenuButton = styled.button<{ $isActive: boolean }>`
   text-align: left;
   transition: background 0.2s;
   margin: 2px 0;
+  box-sizing: border-box;
+  min-width: 0;
 
   &:hover {
     background: ${(props) => (props.$isActive ? "#e7f5ff" : "#f1f3f5")};
@@ -97,6 +105,8 @@ const MenuLink = styled(Link)<{ $isActive: boolean }>`
   color: inherit;
   transition: background 0.2s;
   margin: 2px 0;
+  box-sizing: border-box;
+  min-width: 0;
 
   &:hover {
     background: ${(props) => (props.$isActive ? "#e7f5ff" : "#f1f3f5")};
@@ -114,11 +124,16 @@ const DisabledMenuItem = styled.div`
   cursor: not-allowed;
   margin: 2px 0;
   opacity: 0.5;
+  box-sizing: border-box;
+  min-width: 0;
 `;
 
 const MenuLabel = styled(Text)`
   flex: 1;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const IconWrapper = styled.span`
@@ -223,12 +238,16 @@ export function Sidebar({ menuItems }: SidebarProps) {
   return (
     <SidebarContainer>
       <SidebarHeader>
-        <Text typo="24" bold>
-          대학 포털
-        </Text>
-        <Text typo="14" color="txt-black-darker" style={{ marginTop: "4px" }}>
-          통합 정보 시스템
-        </Text>
+        <div>
+          <Text typo="24" bold>
+            대학 포털
+          </Text>
+        </div>
+        <div>
+          <Text typo="14" color="txt-black-darker" style={{ marginTop: "4px" }}>
+            통합 정보 시스템
+          </Text>
+        </div>
       </SidebarHeader>
       <SidebarContent>
         <nav>

@@ -71,14 +71,14 @@ export default function Home() {
         <Box marginTop={16}>
           <Card style={{ marginBottom: "12px" }}>
             <Text typo="16" bold style={{ display: "block" }}>
-              2024학년도 1학기 수강신청 일정 안내
+              2025학년도 2학기 수강신청 일정 안내
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
               style={{ marginTop: "8px", display: "block" }}
             >
-              2024.02.15
+              2025.08.15
             </Text>
           </Card>
           <Card style={{ marginBottom: "12px" }}>
@@ -90,7 +90,7 @@ export default function Home() {
               color="txt-black-darker"
               style={{ marginTop: "8px", display: "block" }}
             >
-              2024.02.14
+              2025.08.14
             </Text>
           </Card>
           <Card>
@@ -102,7 +102,7 @@ export default function Home() {
               color="txt-black-darker"
               style={{ marginTop: "8px", display: "block" }}
             >
-              2024.02.13
+              2025.08.13
             </Text>
           </Card>
         </Box>

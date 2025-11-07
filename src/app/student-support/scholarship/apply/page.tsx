@@ -76,7 +76,7 @@ export default function ScholarshipApplyPage() {
           장학금 신청
         </Text>
         <Text typo="16" color="txt-black-darker" style={{ marginTop: "8px", display: "block" }}>
-          2024학년도 1학기 장학금 신청 페이지입니다
+          2025학년도 2학기 장학금 신청 페이지입니다
         </Text>
       </PageHeader>
 
@@ -89,7 +89,7 @@ export default function ScholarshipApplyPage() {
             1. 신청 기간
           </Text>
           <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
-            2024년 2월 1일 ~ 2월 28일 23:59까지
+            2025년 8월 1일 ~ 8월 31일 23:59까지
           </Text>
         </InfoBox>
         <InfoBox>
@@ -227,7 +227,7 @@ export default function ScholarshipApplyPage() {
             <Text typo="14" bold style={{ marginBottom: "8px", display: "block" }}>
               이름
             </Text>
-            <TextField value="John Doe" disabled />
+            <TextField value="김채널" disabled />
           </FormRow>
 
           <FormRow>
