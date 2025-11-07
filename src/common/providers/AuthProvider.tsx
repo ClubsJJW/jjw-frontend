@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import React, {
   createContext,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -102,7 +103,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     });
   }, [profile]);
 
-  const login = async (data: LoginData) => {
+  const login = useCallback(async (data: LoginData) => {
     try {
       const response = await loginApi(data);
 
@@ -135,9 +136,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       console.error("Login error:", error);
       throw error;
     }
-  };
+  }, []);
 
-  const fetchUserInfo = async () => {
+  const fetchUserInfo = useCallback(async () => {
     try {
       const token = loadToken();
       if (!token) {
@@ -172,16 +173,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       setProfile(undefined);
       saveCurrentUser(null);
     }
-  };
+  }, []);
 
-  const logout = () => {
+  const logout = useCallback(() => {
     setProfile(undefined);
     saveCurrentUser(null);
     removeToken();
 
     // 채널톡 쿠키 및 로컬스토리지 완전 삭제
     clearChannelData();
-  };
+  }, []);
 
   const value = useMemo(
     () => ({
@@ -191,7 +192,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       profile,
       fetchUserInfo,
     }),
-    [profile]
+    [profile, login, logout, fetchUserInfo]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

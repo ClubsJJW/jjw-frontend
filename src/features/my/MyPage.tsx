@@ -49,7 +49,7 @@ export default function MainPage() {
       // API에서 최신 사용자 정보 가져오기
       fetchUserInfo();
     }
-  }, [isLoggedIn, router, fetchUserInfo]);
+  }, [isLoggedIn, router]);
 
   if (!isLoggedIn || !profile) {
     return null;
