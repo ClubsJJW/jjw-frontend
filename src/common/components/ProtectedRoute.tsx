@@ -9,16 +9,21 @@ interface ProtectedRouteProps {
 }
 
 export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, isLoading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    // 메인 페이지("/")와 로그인 페이지("/login")는 제외
-    if (!isLoggedIn && pathname !== "/main" && pathname !== "/login") {
+    // 로딩 중이거나 메인 페이지, 로그인 페이지는 제외
+    if (!isLoading && !isLoggedIn && pathname !== "/main" && pathname !== "/login") {
       router.replace("/login");
     }
-  }, [isLoggedIn, pathname, router]);
+  }, [isLoggedIn, isLoading, pathname, router]);
+
+  // 로딩 중일 때는 아무것도 렌더링하지 않음
+  if (isLoading) {
+    return null;
+  }
 
   // 로그인하지 않았고 보호된 페이지인 경우 null 반환
   if (!isLoggedIn && pathname !== "/main" && pathname !== "/login") {

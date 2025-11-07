@@ -33,6 +33,7 @@ interface LoginData {
 
 interface AuthContextType {
   isLoggedIn: boolean;
+  isLoading: boolean;
   login: (data: LoginData) => Promise<void>;
   logout: () => void;
   profile: Profile | undefined;
@@ -79,14 +80,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [profile, setProfile] = useState<Profile | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const currentUser = loadCurrentUser();
     if (currentUser) {
-      setTimeout(() => {
-        setProfile(currentUser);
-      }, 0);
+      setProfile(currentUser);
     }
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -187,12 +188,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const value = useMemo(
     () => ({
       isLoggedIn: profile !== undefined,
+      isLoading,
       login,
       logout,
       profile,
       fetchUserInfo,
     }),
-    [profile, login, logout, fetchUserInfo]
+    [profile, login, logout, fetchUserInfo, isLoading]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
