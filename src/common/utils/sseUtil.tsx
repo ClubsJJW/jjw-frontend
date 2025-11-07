@@ -1,8 +1,8 @@
 export const connectSSE = async (
   url: string,
-  onMessage: (data: any) => void,
+  onMessage: (data: string) => void,
   onConnect?: () => void,
-  onError?: (error: any) => void
+  onError?: (error: Event) => void
 ) => {
   // SSE 연결 설정
   const eventSource = new EventSource(url);
