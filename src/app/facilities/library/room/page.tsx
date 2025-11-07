@@ -329,7 +329,7 @@ export default function LibraryRoomReservationPage() {
                   color="txt-black-darker"
                   style={{ marginTop: "4px", display: "block" }}
                 >
-                  2024.02.15 14:00 ~ 16:00
+                  2025.08.15 14:00 ~ 16:00
                 </Text>
               </div>
               <FlexBox $gap={12}>
@@ -349,7 +349,7 @@ export default function LibraryRoomReservationPage() {
           <Text typo="14" style={{ marginBottom: "16px", display: "block" }}>
             <strong>좌석:</strong> 제1열람실 A-01
             <br />
-            <strong>날짜:</strong> 2024년 2월 15일
+            <strong>날짜:</strong> 2025년 8월 15일
             <br />
             <strong>시간:</strong> 16:00 ~ 18:00 (2시간)
           </Text>

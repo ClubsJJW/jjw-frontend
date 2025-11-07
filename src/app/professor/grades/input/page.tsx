@@ -114,8 +114,8 @@ export default function ProfessorGradesInputPage() {
             1. 성적 입력 기간
           </Text>
           <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
-            - 중간고사: 2024년 4월 1일 ~ 4월 10일
-            <br />- 기말고사: 2024년 6월 10일 ~ 6월 20일
+            - 중간고사: 2025년 10월 1일 ~ 10월 10일
+            <br />- 기말고사: 2025년 12월 10일 ~ 12월 20일
           </Text>
         </InfoBox>
         <InfoBox>
@@ -592,26 +592,26 @@ export default function ProfessorGradesInputPage() {
             <tbody>
               <tr>
                 <td>자료구조</td>
-                <td>2024-1</td>
+                <td>2025-2</td>
                 <td>50명</td>
                 <td>3.42</td>
-                <td>2024.06.15 14:30</td>
+                <td>2025.12.15 14:30</td>
                 <td>임시저장</td>
               </tr>
               <tr>
                 <td>컴퓨터 개론</td>
-                <td>2023-2</td>
+                <td>2025-1</td>
                 <td>45명</td>
                 <td>3.35</td>
-                <td>2023.12.18 16:20</td>
+                <td>2025.06.18 16:20</td>
                 <td>제출완료</td>
               </tr>
               <tr>
                 <td>알고리즘</td>
-                <td>2023-2</td>
+                <td>2024-2</td>
                 <td>42명</td>
                 <td>3.58</td>
-                <td>2023.12.17 11:45</td>
+                <td>2024.12.17 11:45</td>
                 <td>제출완료</td>
               </tr>
             </tbody>

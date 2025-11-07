@@ -98,7 +98,7 @@ export default function ProfessorCoursesListPage() {
           담당 강의 관리
         </Text>
         <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px", display: "block" }}>
-          2024학년도 1학기 담당 강의 목록입니다
+          2025학년도 2학기 담당 강의 목록입니다
         </Text>
       </PageHeader>
 
@@ -587,7 +587,7 @@ export default function ProfessorCoursesListPage() {
               <tr>
                 <td>컴퓨터 개론</td>
                 <td>중간고사 일정 변경 안내</td>
-                <td>2024.02.10</td>
+                <td>2025.08.10</td>
                 <td>45</td>
                 <td>
                   <Button text="수정" size="s" colorVariant="monochrome-dark" />
@@ -596,7 +596,7 @@ export default function ProfessorCoursesListPage() {
               <tr>
                 <td>자료구조</td>
                 <td>과제 제출 기한 연장</td>
-                <td>2024.02.08</td>
+                <td>2025.08.08</td>
                 <td>50</td>
                 <td>
                   <Button text="수정" size="s" colorVariant="monochrome-dark" />
@@ -605,7 +605,7 @@ export default function ProfessorCoursesListPage() {
               <tr>
                 <td>알고리즘</td>
                 <td>보강 일정 안내</td>
-                <td>2024.02.05</td>
+                <td>2025.08.05</td>
                 <td>42</td>
                 <td>
                   <Button text="수정" size="s" colorVariant="monochrome-dark" />

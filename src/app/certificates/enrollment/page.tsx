@@ -362,7 +362,7 @@ export default function EnrollmentCertificatePage() {
             <Text typo="14" style={{ display: "block" }}>위 사람은 본교에 재학중임을 증명합니다.</Text>
           </Box>
           <Box marginTop={60}>
-            <Text typo="16" style={{ display: "block" }}>2024년 2월 15일</Text>
+            <Text typo="16" style={{ display: "block" }}>2025년 8월 15일</Text>
             <Box marginTop={32}>
               <Text typo="22" bold style={{ display: "block" }}>
                 한국대학교 총장 [직인]
@@ -411,7 +411,7 @@ export default function EnrollmentCertificatePage() {
             </thead>
             <tbody>
               <tr>
-                <td>2024.02.10 14:30</td>
+                <td>2025.08.10 14:30</td>
                 <td>재학증명서 (국문)</td>
                 <td>1매</td>
                 <td>온라인</td>
@@ -421,7 +421,7 @@ export default function EnrollmentCertificatePage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.01.15 10:20</td>
+                <td>2025.07.15 10:20</td>
                 <td>재학증명서 (영문)</td>
                 <td>2매</td>
                 <td>방문 수령</td>

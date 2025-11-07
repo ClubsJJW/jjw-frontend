@@ -88,11 +88,11 @@ export default function SemesterGradesPage() {
           <Text typo="14" style={{ minWidth: "60px", display: "block" }}>
             학년도
           </Text>
-          <Select placeholder="2024" style={{ width: "150px" }} />
+          <Select placeholder="2025" style={{ width: "150px" }} />
           <Text typo="14" style={{ minWidth: "60px", display: "block" }}>
             학기
           </Text>
-          <Select placeholder="1학기" style={{ width: "150px" }} />
+          <Select placeholder="2학기" style={{ width: "150px" }} />
           <Button text="조회" size="m" colorVariant="blue" />
         </FilterBox>
       </Section>
@@ -153,9 +153,9 @@ export default function SemesterGradesPage() {
         </StatBox>
       </Section>
 
-      <Section id="grades-2024-1">
+      <Section id="grades-2025-2">
         <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
-          2024학년도 1학기 성적
+          2025학년도 2학기 성적
         </Text>
         <TableContainer>
           <Table>
@@ -230,9 +230,9 @@ export default function SemesterGradesPage() {
         </TableContainer>
       </Section>
 
-      <Section id="grades-2023-2">
+      <Section id="grades-2025-1">
         <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
-          2023학년도 2학기 성적
+          2025학년도 1학기 성적
         </Text>
         <TableContainer>
           <Table>
@@ -325,16 +325,16 @@ export default function SemesterGradesPage() {
             </thead>
             <tbody>
               <tr>
-                <td>2024</td>
-                <td>1학기</td>
+                <td>2025</td>
+                <td>2학기</td>
                 <td>18</td>
                 <td>18</td>
                 <td>3.85</td>
                 <td>3.72</td>
               </tr>
               <tr>
-                <td>2023</td>
-                <td>2학기</td>
+                <td>2025</td>
+                <td>1학기</td>
                 <td>16</td>
                 <td>16</td>
                 <td>3.58</td>

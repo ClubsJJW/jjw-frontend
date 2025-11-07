@@ -85,7 +85,7 @@ export default function CourseRegistrationPage() {
           수강 신청
         </Text>
         <Text typo="16" color="txt-black-darker" style={{ marginTop: "8px", display: "block" }}>
-          2024학년도 1학기 수강 신청
+          2025학년도 2학기 수강 신청
         </Text>
       </PageHeader>
 
@@ -107,31 +107,31 @@ export default function CourseRegistrationPage() {
               <tr>
                 <td>1차 수강신청</td>
                 <td>4학년</td>
-                <td>2024.02.05 10:00 ~ 02.06 17:00</td>
+                <td>2025.08.05 10:00 ~ 08.06 17:00</td>
                 <td>졸업예정자 우선</td>
               </tr>
               <tr>
                 <td>2차 수강신청</td>
                 <td>3학년</td>
-                <td>2024.02.07 10:00 ~ 02.08 17:00</td>
+                <td>2025.08.07 10:00 ~ 08.08 17:00</td>
                 <td>-</td>
               </tr>
               <tr>
                 <td>3차 수강신청</td>
                 <td>2학년</td>
-                <td>2024.02.09 10:00 ~ 02.10 17:00</td>
+                <td>2025.08.09 10:00 ~ 08.10 17:00</td>
                 <td>-</td>
               </tr>
               <tr>
                 <td>4차 수강신청</td>
                 <td>1학년</td>
-                <td>2024.02.11 10:00 ~ 02.12 17:00</td>
+                <td>2025.08.11 10:00 ~ 08.12 17:00</td>
                 <td>-</td>
               </tr>
               <tr>
                 <td>수강정정</td>
                 <td>전체</td>
-                <td>2024.02.13 10:00 ~ 02.16 17:00</td>
+                <td>2025.08.13 10:00 ~ 08.16 17:00</td>
                 <td>변경 가능</td>
               </tr>
             </tbody>
