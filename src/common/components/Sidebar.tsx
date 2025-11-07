@@ -1,10 +1,11 @@
 "use client";
 
+import { useAuth } from "@/common/providers/AuthProvider";
 import { MenuItem } from "@/common/types/navigation";
 import { ChevronDownIcon, ChevronRightIcon } from "@channel.io/bezier-icons";
-import { Text } from "@channel.io/bezier-react";
+import { Button, Text } from "@channel.io/bezier-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -31,11 +32,29 @@ const SidebarContainer = styled.aside`
   position: fixed;
   left: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SidebarHeader = styled.div`
   padding: 24px 20px;
   border-bottom: 1px solid #e9ecef;
+`;
+
+const SidebarContent = styled.div`
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const SidebarFooter = styled.div`
+  padding: 16px 20px;
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+`;
+
+const UserInfo = styled.div`
+  margin-bottom: 12px;
+  padding: 8px 0;
 `;
 
 const MenuList = styled.ul`
@@ -184,6 +203,18 @@ interface SidebarProps {
 }
 
 export function Sidebar({ menuItems }: SidebarProps) {
+  const { isLoggedIn, logout, profile } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logout();
+    router.push("/login");
+  };
+
+  const handleLogin = () => {
+    router.push("/login");
+  };
+
   return (
     <SidebarContainer>
       <SidebarHeader>
@@ -194,13 +225,46 @@ export function Sidebar({ menuItems }: SidebarProps) {
           통합 정보 시스템
         </Text>
       </SidebarHeader>
-      <nav>
-        <MenuList>
-          {menuItems.map((item) => (
-            <MenuItemComponent key={item.id} item={item} />
-          ))}
-        </MenuList>
-      </nav>
+      <SidebarContent>
+        <nav>
+          <MenuList>
+            {menuItems.map((item) => (
+              <MenuItemComponent key={item.id} item={item} />
+            ))}
+          </MenuList>
+        </nav>
+      </SidebarContent>
+      <SidebarFooter>
+        {isLoggedIn ? (
+          <>
+            <UserInfo>
+              <Text typo="14" bold>
+                {profile?.name}
+              </Text>{" "}
+              {profile?.email && (
+                <Text typo="12" color="txt-black-darker">
+                  {profile.email}
+                </Text>
+              )}
+            </UserInfo>
+            <Button
+              text="로그아웃"
+              size="m"
+              styleVariant="secondary"
+              onClick={handleLogout}
+              style={{ width: "100%" }}
+            />
+          </>
+        ) : (
+          <Button
+            text="로그인"
+            size="m"
+            styleVariant="primary"
+            onClick={handleLogin}
+            style={{ width: "100%" }}
+          />
+        )}
+      </SidebarFooter>
     </SidebarContainer>
   );
 }
