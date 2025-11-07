@@ -16,9 +16,15 @@ export default function LoginPage() {
     }
   }, [isLoggedIn, router]);
 
-  const handleLogin = (data: LoginFormData) => {
-    login(data);
-    router.replace("/");
+  const handleLogin = async (data: LoginFormData) => {
+    try {
+      await login(data);
+      router.replace("/");
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "로그인에 실패했습니다.";
+      alert(message);
+    }
   };
 
   if (isLoggedIn) {

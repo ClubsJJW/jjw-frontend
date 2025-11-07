@@ -1,23 +1,7 @@
 import type { Profile } from "@/common/providers/AuthProvider";
 
 const STORAGE_KEY = "current_user";
-
-// 랜덤 ID 생성 (영숫자만 사용)
-const generateRandomId = (): string => {
-  // UUID 생성 후 하이픈 제거
-  const uuid = crypto.randomUUID().replace(/-/g, "");
-  return "user_" + uuid;
-};
-
-// 새 사용자 생성
-export const createUser = (name: string, email?: string): Profile => {
-  return {
-    id: generateRandomId(),
-    name,
-    email,
-    type: "USER",
-  };
-};
+const TOKEN_KEY = "auth_token";
 
 // 현재 로그인 사용자 저장
 export const saveCurrentUser = (user: Profile | null) => {
@@ -30,7 +14,7 @@ export const saveCurrentUser = (user: Profile | null) => {
 
 // 현재 로그인 사용자 불러오기
 export const loadCurrentUser = (): Profile | null => {
-  // if (typeof window === "undefined") return null;
+  if (typeof window === "undefined") return null;
 
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored) {
@@ -41,4 +25,20 @@ export const loadCurrentUser = (): Profile | null => {
     }
   }
   return null;
+};
+
+// 토큰 저장
+export const saveToken = (token: string) => {
+  localStorage.setItem(TOKEN_KEY, token);
+};
+
+// 토큰 불러오기
+export const loadToken = (): string | null => {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(TOKEN_KEY);
+};
+
+// 토큰 삭제
+export const removeToken = () => {
+  localStorage.removeItem(TOKEN_KEY);
 };

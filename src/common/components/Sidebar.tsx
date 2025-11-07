@@ -264,12 +264,7 @@ export function Sidebar({ menuItems }: SidebarProps) {
             <UserInfo>
               <Text typo="14" bold>
                 {profile?.name}
-              </Text>{" "}
-              {profile?.email && (
-                <Text typo="12" color="txt-black-darker">
-                  {profile.email}
-                </Text>
-              )}
+              </Text>
             </UserInfo>
             <Button
               text="로그아웃"

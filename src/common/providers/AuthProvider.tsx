@@ -10,29 +10,32 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { getUserInfo, login as loginApi } from "../api/auth";
 import {
-  createUser,
   loadCurrentUser,
+  loadToken,
+  removeToken,
   saveCurrentUser,
+  saveToken,
 } from "../utils/userStorage";
 
 export type Profile = {
   id: string;
   name: string;
   type: string;
-  email?: string;
 };
 
 interface LoginData {
-  name: string;
-  email?: string;
+  nickname: string;
+  password: string;
 }
 
 interface AuthContextType {
   isLoggedIn: boolean;
-  login: (data: LoginData) => void;
+  login: (data: LoginData) => Promise<void>;
   logout: () => void;
   profile: Profile | undefined;
+  fetchUserInfo: () => Promise<void>;
 }
 
 const CHANNEL_PLUGIN_KEY = "e0685dec-5603-4aee-b4b1-8f2e75d9befd";
@@ -91,33 +94,90 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     ChannelService.boot({
       pluginKey: CHANNEL_PLUGIN_KEY,
       memberId: profile?.id ? profile?.id.toString() : undefined,
-      profile:
-        profile !== undefined
-          ? {
-              name: profile.name,
-              email: profile?.email || null,
-            }
-          : undefined,
+      profile: profile
+        ? {
+            name: profile.name,
+          }
+        : undefined,
     });
   }, [profile]);
 
-  const login = (data: LoginData) => {
-    const newProfile = createUser(data.name, data.email);
-    setProfile(newProfile);
-    saveCurrentUser(newProfile);
+  const login = async (data: LoginData) => {
+    try {
+      const response = await loginApi(data);
 
-    // 채널톡 프로필 업데이트
-    ChannelService.updateUser({
-      profile: {
-        name: newProfile.name,
-        email: newProfile.email || null,
-      },
-    });
+      if (response.success && response.data) {
+        const { userId, nickname, token } = response.data;
+
+        // 토큰 저장
+        saveToken(token);
+
+        // 프로필 생성 및 저장
+        const newProfile: Profile = {
+          id: userId.toString(),
+          name: nickname,
+          type: "USER",
+        };
+
+        setProfile(newProfile);
+        saveCurrentUser(newProfile);
+
+        // 채널톡 프로필 업데이트
+        ChannelService.updateUser({
+          profile: {
+            name: newProfile.name,
+          },
+        });
+      } else {
+        throw new Error(response.message || "로그인 실패");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      throw error;
+    }
+  };
+
+  const fetchUserInfo = async () => {
+    try {
+      const token = loadToken();
+      if (!token) {
+        return;
+      }
+
+      const response = await getUserInfo();
+
+      if (response.success && response.data) {
+        const { userId, nickname } = response.data;
+
+        const newProfile: Profile = {
+          id: userId.toString(),
+          name: nickname,
+          type: "USER",
+        };
+
+        setProfile(newProfile);
+        saveCurrentUser(newProfile);
+
+        // 채널톡 프로필 업데이트
+        ChannelService.updateUser({
+          profile: {
+            name: newProfile.name,
+          },
+        });
+      }
+    } catch (error) {
+      console.error("Failed to fetch user info:", error);
+      // 토큰이 유효하지 않으면 로그아웃
+      removeToken();
+      setProfile(undefined);
+      saveCurrentUser(null);
+    }
   };
 
   const logout = () => {
     setProfile(undefined);
     saveCurrentUser(null);
+    removeToken();
 
     // 채널톡 쿠키 및 로컬스토리지 완전 삭제
     clearChannelData();
@@ -129,6 +189,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       login,
       logout,
       profile,
+      fetchUserInfo,
     }),
     [profile]
   );

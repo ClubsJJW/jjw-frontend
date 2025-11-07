@@ -39,14 +39,17 @@ const Value = styled.span`
 `;
 
 export default function MainPage() {
-  const { isLoggedIn, profile, logout } = useAuth();
+  const { isLoggedIn, profile, logout, fetchUserInfo } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     if (!isLoggedIn) {
       router.push("/login");
+    } else {
+      // API에서 최신 사용자 정보 가져오기
+      fetchUserInfo();
     }
-  }, [isLoggedIn, router]);
+  }, [isLoggedIn, router, fetchUserInfo]);
 
   if (!isLoggedIn || !profile) {
     return null;
@@ -59,10 +62,6 @@ export default function MainPage() {
           <div>
             <Label>이름: </Label>
             <Value>{profile.name}</Value>
-          </div>
-          <div>
-            <Label>이메일: </Label>
-            <Value>{profile.email}</Value>
           </div>
           <div>
             <Label>사용자 ID: </Label>
