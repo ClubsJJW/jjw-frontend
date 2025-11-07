@@ -1,8 +1,11 @@
 "use client";
 
-import styled from "styled-components";
-import { Sidebar } from "./Sidebar";
 import { navigationMenu } from "@/common/types/navigation";
+import { useEffect } from "react";
+import styled from "styled-components";
+import { BASE_URL } from "../constants";
+import { connectSSE } from "../utils/sseUtil";
+import { Sidebar } from "./Sidebar";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -27,6 +30,22 @@ interface MainLayoutProps {
 }
 
 export function MainLayout({ children }: MainLayoutProps) {
+  useEffect(() => {
+    let eventSource = new EventSource(`${BASE_URL}`);
+
+    const callConnectSSE = async () => {
+      eventSource = await connectSSE(eventSource, (rawData) => {
+        const data = JSON.parse(rawData);
+        console.log(data);
+      });
+    };
+    callConnectSSE();
+
+    return () => {
+      eventSource?.close();
+    };
+  }, []);
+
   return (
     <LayoutContainer>
       <Sidebar menuItems={navigationMenu} />

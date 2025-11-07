@@ -12,6 +12,7 @@ import React, {
   useState,
 } from "react";
 import { getUserInfo, login as loginApi } from "../api/auth";
+import { CHANNEL_PLUGIN_KEY } from "../constants";
 import {
   loadCurrentUser,
   loadToken,
@@ -39,8 +40,6 @@ interface AuthContextType {
   profile: Profile | undefined;
   fetchUserInfo: () => Promise<void>;
 }
-
-const CHANNEL_PLUGIN_KEY = "e0685dec-5603-4aee-b4b1-8f2e75d9befd";
 
 // "-veil-id"와 "-session"이 포함된 모든 쿠키와 로컬스토리지 삭제
 const clearChannelData = () => {

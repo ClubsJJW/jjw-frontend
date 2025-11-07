@@ -1,12 +1,9 @@
 export const connectSSE = async (
-  url: string,
+  eventSource: EventSource,
   onMessage: (data: string) => void,
   onConnect?: () => void,
   onError?: (error: Event) => void
 ) => {
-  // SSE 연결 설정
-  const eventSource = new EventSource(url);
-
   // 연결 성공 이벤트
   eventSource.addEventListener("connect", (event: MessageEvent) => {
     if (event.data === "SSE 연결이 완료되었습니다.") {
@@ -21,7 +18,7 @@ export const connectSSE = async (
 
   // 에러 처리
   eventSource.onerror = (error) => {
-    console.error("SSE Error:", error);
+    console.log("SSE Error:", error);
     onError?.(error); // 에러 콜백 호출
     eventSource.close(); // 연결 종료
   };
