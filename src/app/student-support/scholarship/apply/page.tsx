@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
-import { Text, Button, Box, TextField, Select, Checkbox } from "@channel.io/bezier-react";
+import {
+  Text,
+  Button,
+  Box,
+  TextField,
+  Select,
+  Checkbox,
+} from "@channel.io/bezier-react";
 
 const PageContainer = styled.div``;
 
@@ -63,20 +68,6 @@ const Table = styled.table`
 `;
 
 export default function ScholarshipApplyPage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -89,7 +80,7 @@ export default function ScholarshipApplyPage() {
       </PageHeader>
 
       <Section id="notice">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           📢 신청 전 필독사항
         </Text>
         <InfoBox>
@@ -129,7 +120,7 @@ export default function ScholarshipApplyPage() {
       </Section>
 
       <Section id="scholarship-types">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           장학금 종류
         </Text>
         <TableContainer>
@@ -213,10 +204,10 @@ export default function ScholarshipApplyPage() {
       </Section>
 
       <Section id="application-form">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           신청서 작성
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <FormRow>
             <Text typo="14" bold style={{ marginBottom: "8px" }}>
               신청 장학금 선택 *
@@ -295,16 +286,20 @@ export default function ScholarshipApplyPage() {
       </Section>
 
       <Section id="document-upload">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           서류 제출
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <FormRow>
             <Text typo="14" bold style={{ marginBottom: "8px" }}>
               가족관계증명서 *
             </Text>
             <input type="file" />
-            <Text typo="12" color="txt-black-darker" style={{ marginTop: "4px" }}>
+            <Text
+              typo="12"
+              color="txt-black-darker"
+              style={{ marginTop: "4px" }}
+            >
               PDF, JPG, PNG 파일만 업로드 가능 (최대 10MB)
             </Text>
           </FormRow>
@@ -314,7 +309,11 @@ export default function ScholarshipApplyPage() {
               소득증명원 *
             </Text>
             <input type="file" />
-            <Text typo="12" color="txt-black-darker" style={{ marginTop: "4px" }}>
+            <Text
+              typo="12"
+              color="txt-black-darker"
+              style={{ marginTop: "4px" }}
+            >
               PDF, JPG, PNG 파일만 업로드 가능 (최대 10MB)
             </Text>
           </FormRow>
@@ -324,7 +323,11 @@ export default function ScholarshipApplyPage() {
               기타 증빙서류
             </Text>
             <input type="file" multiple />
-            <Text typo="12" color="txt-black-darker" style={{ marginTop: "4px" }}>
+            <Text
+              typo="12"
+              color="txt-black-darker"
+              style={{ marginTop: "4px" }}
+            >
               여러 파일 선택 가능 (각 파일 최대 10MB)
             </Text>
           </FormRow>
@@ -332,11 +335,15 @@ export default function ScholarshipApplyPage() {
       </Section>
 
       <Section id="submit">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           신청 완료
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
-          <Text typo="14" color="txt-black-darker" style={{ marginBottom: "16px" }}>
+        <Box padding={20} backgroundColor="bg-white-normal">
+          <Text
+            typo="14"
+            color="txt-black-darker"
+            style={{ marginBottom: "16px" }}
+          >
             모든 정보를 확인하셨나요? 제출 후에는 수정이 불가능합니다.
           </Text>
           <ButtonGroup>
@@ -348,7 +355,7 @@ export default function ScholarshipApplyPage() {
       </Section>
 
       <Section id="faq">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           자주 묻는 질문
         </Text>
         <InfoBox>
@@ -356,7 +363,8 @@ export default function ScholarshipApplyPage() {
             Q. 장학금을 여러 개 동시에 신청할 수 있나요?
           </Text>
           <Text typo="14" color="txt-black-darker">
-            A. 네, 여러 장학금에 동시 신청이 가능합니다. 단, 최종 선발 시 1개만 수혜 가능합니다.
+            A. 네, 여러 장학금에 동시 신청이 가능합니다. 단, 최종 선발 시 1개만
+            수혜 가능합니다.
           </Text>
         </InfoBox>
         <InfoBox>

@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import { Text, Button, Box, TextField, Select } from "@channel.io/bezier-react";
 
@@ -73,20 +71,6 @@ const FlexBox = styled.div<{
 `;
 
 export default function EnrollmentCertificatePage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -99,7 +83,7 @@ export default function EnrollmentCertificatePage() {
       </PageHeader>
 
       <Section id="fee-info">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           📋 발급 안내
         </Text>
         <InfoBox>
@@ -136,7 +120,7 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="certificate-types">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           증명서 종류
         </Text>
         <TableContainer>
@@ -188,10 +172,10 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="application-form">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           발급 신청서
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <FormRow>
             <Text typo="14" bold style={{ marginBottom: "8px" }}>
               증명서 종류 *
@@ -204,11 +188,25 @@ export default function EnrollmentCertificatePage() {
               언어 *
             </Text>
             <FlexBox $gap={16}>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
                 <input type="radio" name="language" defaultChecked />
                 <Text typo="14">국문</Text>
               </label>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
                 <input type="radio" name="language" />
                 <Text typo="14">영문</Text>
               </label>
@@ -248,7 +246,11 @@ export default function EnrollmentCertificatePage() {
               발급 매수 *
             </Text>
             <TextField placeholder="1" type="number" />
-            <Text typo="12" color="txt-black-darker" style={{ marginTop: "4px" }}>
+            <Text
+              typo="12"
+              color="txt-black-darker"
+              style={{ marginTop: "4px" }}
+            >
               최대 10매까지 발급 가능
             </Text>
           </FormRow>
@@ -270,21 +272,42 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="delivery">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           수령 방법
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <FormRow>
-            <Box display="flex" flexDirection="column" gap={12}>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+            <Box>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
                 <input type="radio" name="delivery" defaultChecked />
                 <Text typo="14">온라인 발급 (PDF 다운로드)</Text>
               </label>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
                 <input type="radio" name="delivery" />
                 <Text typo="14">방문 수령 (학생지원팀)</Text>
               </label>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
                 <input type="radio" name="delivery" />
                 <Text typo="14">우편 수령 (등기우편)</Text>
               </label>
@@ -307,11 +330,11 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="preview">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           미리보기
         </Text>
         <PreviewBox>
-          <Box textAlign="center" marginBottom={40}>
+          <Box marginBottom={40}>
             <Text typo="30" bold>
               재 학 증 명 서
             </Text>
@@ -335,14 +358,12 @@ export default function EnrollmentCertificatePage() {
             <Text typo="16">재학기간: 2023년 3월 2일 ~ 현재</Text>
           </Box>
           <Box marginBottom={24}>
-            <Text typo="14">
-              위 사람은 본교에 재학중임을 증명합니다.
-            </Text>
+            <Text typo="14">위 사람은 본교에 재학중임을 증명합니다.</Text>
           </Box>
-          <Box textAlign="center" marginTop={60}>
+          <Box marginTop={60}>
             <Text typo="16">2024년 2월 15일</Text>
             <Box marginTop={32}>
-              <Text typo="20" bold>
+              <Text typo="22" bold>
                 한국대학교 총장 [직인]
               </Text>
             </Box>
@@ -351,14 +372,18 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="payment">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           결제 정보
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <Box marginBottom={16}>
             <Text typo="16">발급 수수료: 0원</Text>
             <Text typo="16">배송비: 0원</Text>
-            <Box marginTop={8} paddingTop={8} style={{ borderTop: "1px solid #e9ecef" }}>
+            <Box
+              marginTop={8}
+              paddingTop={8}
+              style={{ borderTop: "1px solid #e9ecef" }}
+            >
               <Text typo="18" bold>
                 총 결제 금액: 0원
               </Text>
@@ -368,7 +393,7 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="history">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           최근 발급 내역
         </Text>
         <TableContainer>
@@ -401,7 +426,11 @@ export default function EnrollmentCertificatePage() {
                 <td>방문 수령</td>
                 <td>완료</td>
                 <td>
-                  <Button text="재발급" size="s" colorVariant="monochrome-dark" />
+                  <Button
+                    text="재발급"
+                    size="s"
+                    colorVariant="monochrome-dark"
+                  />
                 </td>
               </tr>
             </tbody>
@@ -410,11 +439,15 @@ export default function EnrollmentCertificatePage() {
       </Section>
 
       <Section id="submit">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           발급 신청
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
-          <Text typo="14" color="txt-black-darker" style={{ marginBottom: "16px" }}>
+        <Box padding={20} backgroundColor="bg-white-normal">
+          <Text
+            typo="14"
+            color="txt-black-darker"
+            style={{ marginBottom: "16px" }}
+          >
             입력한 정보를 확인하고 발급 신청을 완료하세요.
           </Text>
           <FlexBox $gap={12}>

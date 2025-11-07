@@ -139,7 +139,7 @@ function MenuItemComponent({ item, depth = 0 }: MenuItemComponentProps) {
             {item.label}
           </MenuLabel>
           <IconWrapper>
-            {isOpen ? <ChevronDownIcon size="s" /> : <ChevronRightIcon size="s" />}
+            {isOpen ? <ChevronDownIcon /> : <ChevronRightIcon />}
           </IconWrapper>
         </MenuButton>
         {isOpen && (

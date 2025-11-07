@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import { Text, Button, Box, TextField } from "@channel.io/bezier-react";
 
@@ -124,20 +122,6 @@ const FlexBox = styled.div<{
 `;
 
 export default function ProfessorResearchProjectsPage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -162,7 +146,7 @@ export default function ProfessorResearchProjectsPage() {
             >
               진행중인 과제
             </Text>
-            <Text typo="30" bold color="txt-blue-normal">
+            <Text typo="30" bold>
               3건
             </Text>
           </StatCard>
@@ -232,18 +216,13 @@ export default function ProfessorResearchProjectsPage() {
             </div>
             <Button text="상세보기" size="l" colorVariant="blue" />
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={40}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   총 연구비
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   300백만원
                 </Text>
               </div>
@@ -251,7 +230,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   집행률
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   45%
                 </Text>
               </div>
@@ -259,7 +238,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   참여 연구원
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   5명
                 </Text>
               </div>
@@ -267,7 +246,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   진행률
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   60%
                 </Text>
               </div>
@@ -308,18 +287,13 @@ export default function ProfessorResearchProjectsPage() {
             </div>
             <Button text="상세보기" size="l" colorVariant="blue" />
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={40}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   총 연구비
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   100백만원
                 </Text>
               </div>
@@ -327,7 +301,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   집행률
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   25%
                 </Text>
               </div>
@@ -335,7 +309,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   참여 연구원
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   3명
                 </Text>
               </div>
@@ -343,7 +317,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   진행률
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   30%
                 </Text>
               </div>
@@ -382,18 +356,13 @@ export default function ProfessorResearchProjectsPage() {
             </div>
             <Button text="상세보기" size="l" colorVariant="blue" />
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={40}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   총 연구비
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   50백만원
                 </Text>
               </div>
@@ -401,7 +370,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   집행률
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   35%
                 </Text>
               </div>
@@ -409,7 +378,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   참여 연구원
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   2명
                 </Text>
               </div>
@@ -417,7 +386,7 @@ export default function ProfessorResearchProjectsPage() {
                 <Text typo="14" color="txt-black-darker">
                   진행률
                 </Text>
-                <Text typo="20" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px" }}>
                   40%
                 </Text>
               </div>

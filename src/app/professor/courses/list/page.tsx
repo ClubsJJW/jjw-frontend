@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import { Text, Button, Box } from "@channel.io/bezier-react";
 
@@ -93,20 +91,6 @@ const FlexBox = styled.div<{
 `;
 
 export default function ProfessorCoursesListPage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -167,7 +151,7 @@ export default function ProfessorCoursesListPage() {
             >
               미제출 과제
             </Text>
-            <Text typo="30" bold color="txt-red-normal">
+            <Text typo="30" bold>
               23건
             </Text>
           </StatCard>
@@ -182,25 +166,20 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="20" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px" }}>
                 컴퓨터 개론 (CS101-01)
               </Text>
               <Text typo="16" color="txt-black-darker">
                 월/수 10:00-11:30 | 공학관 101호
               </Text>
             </div>
-            <Box display="flex" gap={12}>
+            <Box>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={32}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   수강 인원
@@ -240,25 +219,20 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="20" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px" }}>
                 자료구조 (CS201-01)
               </Text>
               <Text typo="16" color="txt-black-darker">
                 화/목 13:00-14:30 | 공학관 201호
               </Text>
             </div>
-            <Box display="flex" gap={12}>
+            <Box>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={32}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   수강 인원
@@ -298,25 +272,20 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="20" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px" }}>
                 알고리즘 (CS202-01)
               </Text>
               <Text typo="16" color="txt-black-darker">
                 월/수 13:00-14:30 | 공학관 301호
               </Text>
             </div>
-            <Box display="flex" gap={12}>
+            <Box>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={32}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   수강 인원
@@ -356,25 +325,20 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="20" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px" }}>
                 데이터베이스 (CS302-01)
               </Text>
               <Text typo="16" color="txt-black-darker">
                 월/수 15:00-16:30 | 공학관 501호
               </Text>
             </div>
-            <Box display="flex" gap={12}>
+            <Box>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={32}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   수강 인원
@@ -414,25 +378,20 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="20" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px" }}>
                 캡스톤 디자인 (CS401-01)
               </Text>
               <Text typo="16" color="txt-black-darker">
                 금 13:00-17:00 | 공학관 801호
               </Text>
             </div>
-            <Box display="flex" gap={12}>
+            <Box>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
           </FlexBox>
-          <Box
-            marginTop={20}
-            padding={20}
-            backgroundColor="bg-black-lighter"
-            borderRadius="6px"
-          >
-            <Box display="flex" gap={32}>
+          <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
+            <Box>
               <div>
                 <Text typo="14" color="txt-black-darker">
                   수강 인원

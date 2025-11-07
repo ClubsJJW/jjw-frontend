@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import { Text, Button, Box, Select } from "@channel.io/bezier-react";
 
@@ -47,7 +45,8 @@ const RoomCard = styled.div<{ $available: boolean }>`
 
   &:hover {
     transform: ${(props) => (props.$available ? "translateY(-2px)" : "none")};
-    box-shadow: ${(props) => (props.$available ? "0 4px 12px rgba(0,0,0,0.1)" : "none")};
+    box-shadow: ${(props) =>
+      props.$available ? "0 4px 12px rgba(0,0,0,0.1)" : "none"};
   }
 `;
 
@@ -67,7 +66,8 @@ const TimeSlot = styled.div<{ $available: boolean; $selected?: boolean }>`
     props.$selected ? "#2196F3" : props.$available ? "#E8F5E9" : "#FFEBEE"};
   color: ${(props) => (props.$selected ? "white" : "inherit")};
   border: 1px solid
-    ${(props) => (props.$selected ? "#2196F3" : props.$available ? "#4CAF50" : "#F44336")};
+    ${(props) =>
+      props.$selected ? "#2196F3" : props.$available ? "#4CAF50" : "#F44336"};
   cursor: ${(props) => (props.$available ? "pointer" : "not-allowed")};
 `;
 
@@ -94,20 +94,6 @@ const FlexBox = styled.div<{
 `;
 
 export default function LibraryRoomReservationPage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -120,7 +106,7 @@ export default function LibraryRoomReservationPage() {
       </PageHeader>
 
       <Section id="guidelines">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           📢 이용 안내
         </Text>
         <InfoBox>
@@ -157,7 +143,7 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="filter">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           열람실 선택
         </Text>
         <FilterBox>
@@ -178,10 +164,10 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="room-status">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           현재 좌석 현황 - 제1열람실 (3층)
         </Text>
-        <Box padding={16} backgroundColor="bg-white-normal" borderRadius="8px" marginBottom={16}>
+        <Box padding={16} backgroundColor="bg-white-normal" marginBottom={16}>
           <Text typo="16" bold>
             전체: 120석 | 사용중: 85석 | 예약: 15석 | 공석: 20석
           </Text>
@@ -191,80 +177,120 @@ export default function LibraryRoomReservationPage() {
             <Text typo="16" bold>
               좌석 A-01
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Button text="예약하기" size="s" colorVariant="blue" style={{ width: "100%" }} />
+              <Button
+                text="예약하기"
+                size="s"
+                colorVariant="blue"
+                style={{ width: "100%" }}
+              />
             </Box>
           </RoomCard>
           <RoomCard $available={false}>
             <Text typo="16" bold>
               좌석 A-02
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Text typo="14" color="txt-red-normal">
-                사용중
-              </Text>
+              <Text typo="14">사용중</Text>
             </Box>
           </RoomCard>
           <RoomCard $available={true}>
             <Text typo="16" bold>
               좌석 A-03
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Button text="예약하기" size="s" colorVariant="blue" style={{ width: "100%" }} />
+              <Button
+                text="예약하기"
+                size="s"
+                colorVariant="blue"
+                style={{ width: "100%" }}
+              />
             </Box>
           </RoomCard>
           <RoomCard $available={true}>
             <Text typo="16" bold>
               좌석 A-04
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Button text="예약하기" size="s" colorVariant="blue" style={{ width: "100%" }} />
+              <Button
+                text="예약하기"
+                size="s"
+                colorVariant="blue"
+                style={{ width: "100%" }}
+              />
             </Box>
           </RoomCard>
           <RoomCard $available={false}>
             <Text typo="16" bold>
               좌석 A-05
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Text typo="14" color="txt-red-normal">
-                예약됨
-              </Text>
+              <Text typo="14">예약됨</Text>
             </Box>
           </RoomCard>
           <RoomCard $available={true}>
             <Text typo="16" bold>
               좌석 A-06
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Button text="예약하기" size="s" colorVariant="blue" style={{ width: "100%" }} />
+              <Button
+                text="예약하기"
+                size="s"
+                colorVariant="blue"
+                style={{ width: "100%" }}
+              />
             </Box>
           </RoomCard>
         </Grid>
       </Section>
 
       <Section id="time-selection">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           시간대 선택 - 좌석 A-01
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <Text typo="14" style={{ marginBottom: "12px" }}>
             이용 가능한 시간대를 선택하세요 (2시간 단위)
           </Text>
@@ -288,17 +314,21 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="my-reservations">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           내 예약 현황
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <InfoBox>
             <FlexBox $justify="space-between" $align="center">
               <div>
                 <Text typo="16" bold>
                   제1열람실 - 좌석 B-15
                 </Text>
-                <Text typo="14" color="txt-black-darker" style={{ marginTop: "4px" }}>
+                <Text
+                  typo="14"
+                  color="txt-black-darker"
+                  style={{ marginTop: "4px" }}
+                >
                   2024.02.15 14:00 ~ 16:00
                 </Text>
               </div>
@@ -312,10 +342,10 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="confirm">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           예약 확정
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box padding={20} backgroundColor="bg-white-normal">
           <Text typo="14" style={{ marginBottom: "16px" }}>
             <strong>좌석:</strong> 제1열람실 A-01
             <br />
