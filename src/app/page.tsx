@@ -1,11 +1,5 @@
-"use client";
+import MainPage from "@/features/main/MainPage";
 
-import { Button } from "@channel.io/bezier-react";
+const Page = () => <MainPage />;
 
-export default function Home() {
-  return (
-    <div>
-      <Button text="Click me" size="m" />
-    </div>
-  );
-}
+export default Page;
