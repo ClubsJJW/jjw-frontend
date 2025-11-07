@@ -1,5 +1,7 @@
 import MyPage from "@/features/my/MyPage";
 
-const Page = () => <MyPage />;
+const Page = () => {
+  return <MyPage />;
+};
 
 export default Page;

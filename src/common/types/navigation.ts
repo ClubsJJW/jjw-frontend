@@ -434,4 +434,9 @@ export const navigationMenu: MenuItem[] = [
       },
     ],
   },
+  {
+    id: "my",
+    label: "내 정보",
+    path: "/my",
+  },
 ];

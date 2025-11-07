@@ -38,41 +38,34 @@ interface LoginFormProps {
 
 export function LoginForm({ onLogin }: LoginFormProps) {
   const [formData, setFormData] = useState<LoginFormData>({
-    name: "",
-    email: "",
+    nickname: "",
+    password: "",
   });
 
   const [errors, setErrors] = useState({
-    name: "",
-    email: "",
+    nickname: "",
+    password: "",
   });
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const newErrors = {
-      name: "",
-      email: "",
+      nickname: "",
+      password: "",
     };
 
-    if (!formData.name.trim()) {
-      newErrors.name = "이름을 입력해주세요.";
+    if (!formData.nickname.trim()) {
+      newErrors.nickname = "이름을 입력해주세요.";
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = "이메일을 입력해주세요.";
-    } else if (!validateEmail(formData.email)) {
-      newErrors.email = "올바른 이메일 형식이 아닙니다.";
+    if (!formData.password.trim()) {
+      newErrors.password = "비밀번호를 입력해주세요.";
     }
 
     setErrors(newErrors);
 
-    if (!newErrors.name && !newErrors.email) {
+    if (!newErrors.nickname && !newErrors.password) {
       onLogin(formData);
     }
   };
@@ -82,32 +75,34 @@ export function LoginForm({ onLogin }: LoginFormProps) {
       <FormTitle>로그인</FormTitle>
       <form onSubmit={handleSubmit}>
         <FormGroup>
-          <FormControl hasError={!!errors.name}>
+          <FormControl hasError={!!errors.nickname}>
             <FormLabel>이름</FormLabel>
             <TextField
-              value={formData.name}
+              value={formData.nickname}
               onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
+                setFormData({ ...formData, nickname: e.target.value })
               }
               placeholder="이름을 입력하세요"
             />
-            {errors.name && <FormErrorMessage>{errors.name}</FormErrorMessage>}
+            {errors.nickname && (
+              <FormErrorMessage>{errors.nickname}</FormErrorMessage>
+            )}
           </FormControl>
         </FormGroup>
 
         <FormGroup>
-          <FormControl hasError={!!errors.email}>
-            <FormLabel>이메일</FormLabel>
+          <FormControl hasError={!!errors.password}>
+            <FormLabel>비밀번호</FormLabel>
             <TextField
-              type="email"
-              value={formData.email}
+              type="password"
+              value={formData.password}
               onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
+                setFormData({ ...formData, password: e.target.value })
               }
-              placeholder="이메일을 입력하세요"
+              placeholder="비밀번호를 입력하세요"
             />
-            {errors.email && (
-              <FormErrorMessage>{errors.email}</FormErrorMessage>
+            {errors.password && (
+              <FormErrorMessage>{errors.password}</FormErrorMessage>
             )}
           </FormControl>
         </FormGroup>

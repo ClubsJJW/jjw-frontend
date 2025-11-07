@@ -97,32 +97,32 @@ export default function LibraryRoomReservationPage() {
   return (
     <PageContainer>
       <PageHeader>
-        <Text typo="30" bold>
+        <Text typo="30" bold style={{ display: "block" }}>
           열람실 좌석 예약
         </Text>
-        <Text typo="16" color="txt-black-darker" style={{ marginTop: "8px" }}>
+        <Text typo="16" color="txt-black-darker" style={{ marginTop: "8px", display: "block" }}>
           도서관 열람실 좌석을 예약할 수 있습니다
         </Text>
       </PageHeader>
 
       <Section id="guidelines">
-        <Text typo="22" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
           📢 이용 안내
         </Text>
         <InfoBox>
-          <Text typo="14" bold style={{ marginBottom: "8px" }}>
+          <Text typo="14" bold style={{ marginBottom: "8px", display: "block" }}>
             1. 예약 가능 시간
           </Text>
-          <Text typo="14" color="txt-black-darker">
+          <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
             - 평일: 06:00 ~ 24:00
             <br />- 주말 및 공휴일: 08:00 ~ 22:00
           </Text>
         </InfoBox>
         <InfoBox>
-          <Text typo="14" bold style={{ marginBottom: "8px" }}>
+          <Text typo="14" bold style={{ marginBottom: "8px", display: "block" }}>
             2. 예약 규칙
           </Text>
-          <Text typo="14" color="txt-black-darker">
+          <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
             - 1일 최대 8시간까지 예약 가능
             <br />
             - 2시간 단위로 예약 가능
@@ -130,10 +130,10 @@ export default function LibraryRoomReservationPage() {
           </Text>
         </InfoBox>
         <InfoBox>
-          <Text typo="14" bold style={{ marginBottom: "8px" }}>
+          <Text typo="14" bold style={{ marginBottom: "8px", display: "block" }}>
             3. 퇴실 처리
           </Text>
-          <Text typo="14" color="txt-black-darker">
+          <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
             - 예약 후 30분 이내 미입실 시 자동 취소
             <br />
             - 퇴실 시 반드시 퇴실 처리 필요
@@ -143,19 +143,19 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="filter">
-        <Text typo="22" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
           열람실 선택
         </Text>
         <FilterBox>
-          <Text typo="14" style={{ minWidth: "60px" }}>
+          <Text typo="14" style={{ minWidth: "60px", display: "block" }}>
             건물
           </Text>
           <Select placeholder="중앙도서관" style={{ width: "200px" }} />
-          <Text typo="14" style={{ minWidth: "60px" }}>
+          <Text typo="14" style={{ minWidth: "60px", display: "block" }}>
             층
           </Text>
           <Select placeholder="3층" style={{ width: "150px" }} />
-          <Text typo="14" style={{ minWidth: "60px" }}>
+          <Text typo="14" style={{ minWidth: "60px", display: "block" }}>
             열람실
           </Text>
           <Select placeholder="제1열람실" style={{ width: "200px" }} />
@@ -164,23 +164,23 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="room-status">
-        <Text typo="22" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
           현재 좌석 현황 - 제1열람실 (3층)
         </Text>
         <Box padding={16} backgroundColor="bg-white-normal" marginBottom={16}>
-          <Text typo="16" bold>
+          <Text typo="16" bold style={{ display: "block" }}>
             전체: 120석 | 사용중: 85석 | 예약: 15석 | 공석: 20석
           </Text>
         </Box>
         <Grid>
           <RoomCard $available={true}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               좌석 A-01
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               개인석 | 콘센트 ○
             </Text>
@@ -194,28 +194,28 @@ export default function LibraryRoomReservationPage() {
             </Box>
           </RoomCard>
           <RoomCard $available={false}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               좌석 A-02
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Text typo="14">사용중</Text>
+              <Text typo="14" style={{ display: "block" }}>사용중</Text>
             </Box>
           </RoomCard>
           <RoomCard $available={true}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               좌석 A-03
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               개인석 | 콘센트 ○
             </Text>
@@ -229,13 +229,13 @@ export default function LibraryRoomReservationPage() {
             </Box>
           </RoomCard>
           <RoomCard $available={true}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               좌석 A-04
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               개인석 | 콘센트 ○
             </Text>
@@ -249,28 +249,28 @@ export default function LibraryRoomReservationPage() {
             </Box>
           </RoomCard>
           <RoomCard $available={false}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               좌석 A-05
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               개인석 | 콘센트 ○
             </Text>
             <Box marginTop={12}>
-              <Text typo="14">예약됨</Text>
+              <Text typo="14" style={{ display: "block" }}>예약됨</Text>
             </Box>
           </RoomCard>
           <RoomCard $available={true}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               좌석 A-06
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               개인석 | 콘센트 ○
             </Text>
@@ -287,11 +287,11 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="time-selection">
-        <Text typo="22" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
           시간대 선택 - 좌석 A-01
         </Text>
         <Box padding={20} backgroundColor="bg-white-normal">
-          <Text typo="14" style={{ marginBottom: "12px" }}>
+          <Text typo="14" style={{ marginBottom: "12px", display: "block" }}>
             이용 가능한 시간대를 선택하세요 (2시간 단위)
           </Text>
           <TimeSlotGrid>
@@ -308,31 +308,31 @@ export default function LibraryRoomReservationPage() {
             <TimeSlot $available={false}>22-24시</TimeSlot>
           </TimeSlotGrid>
           <Box marginTop={16}>
-            <Text typo="14">선택한 시간: 16:00 - 18:00 (2시간)</Text>
+            <Text typo="14" style={{ display: "block" }}>선택한 시간: 16:00 - 18:00 (2시간)</Text>
           </Box>
         </Box>
       </Section>
 
       <Section id="my-reservations">
-        <Text typo="22" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
           내 예약 현황
         </Text>
         <Box padding={20} backgroundColor="bg-white-normal">
           <InfoBox>
             <FlexBox $justify="space-between" $align="center">
               <div>
-                <Text typo="16" bold>
+                <Text typo="16" bold style={{ display: "block" }}>
                   제1열람실 - 좌석 B-15
                 </Text>
                 <Text
                   typo="14"
                   color="txt-black-darker"
-                  style={{ marginTop: "4px" }}
+                  style={{ marginTop: "4px", display: "block" }}
                 >
-                  2024.02.15 14:00 ~ 16:00
+                  2025.08.15 14:00 ~ 16:00
                 </Text>
               </div>
-              <FlexBox $gap={8}>
+              <FlexBox $gap={12}>
                 <Button text="입실 처리" size="s" colorVariant="blue" />
                 <Button text="예약 취소" size="s" colorVariant="red" />
               </FlexBox>
@@ -342,14 +342,14 @@ export default function LibraryRoomReservationPage() {
       </Section>
 
       <Section id="confirm">
-        <Text typo="22" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px", display: "block" }}>
           예약 확정
         </Text>
         <Box padding={20} backgroundColor="bg-white-normal">
-          <Text typo="14" style={{ marginBottom: "16px" }}>
+          <Text typo="14" style={{ marginBottom: "16px", display: "block" }}>
             <strong>좌석:</strong> 제1열람실 A-01
             <br />
-            <strong>날짜:</strong> 2024년 2월 15일
+            <strong>날짜:</strong> 2025년 8월 15일
             <br />
             <strong>시간:</strong> 16:00 ~ 18:00 (2시간)
           </Text>

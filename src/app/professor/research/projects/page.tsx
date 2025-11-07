@@ -125,16 +125,16 @@ export default function ProfessorResearchProjectsPage() {
   return (
     <PageContainer>
       <PageHeader>
-        <Text typo="36" bold>
+        <Text typo="36" bold style={{ display: "block" }}>
           연구 과제 관리
         </Text>
-        <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px" }}>
+        <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px", display: "block" }}>
           진행중인 연구 과제와 연구비를 관리합니다
         </Text>
       </PageHeader>
 
       <Section id="summary">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           연구 현황
         </Text>
         <StatBox>
@@ -142,11 +142,11 @@ export default function ProfessorResearchProjectsPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               진행중인 과제
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               3건
             </Text>
           </StatCard>
@@ -154,11 +154,11 @@ export default function ProfessorResearchProjectsPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               총 연구비
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               450백만원
             </Text>
           </StatCard>
@@ -166,11 +166,11 @@ export default function ProfessorResearchProjectsPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               논문 실적
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               12편
             </Text>
           </StatCard>
@@ -178,11 +178,11 @@ export default function ProfessorResearchProjectsPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               특허 출원
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               2건
             </Text>
           </StatCard>
@@ -190,7 +190,7 @@ export default function ProfessorResearchProjectsPage() {
       </Section>
 
       <Section id="active-projects">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           진행중인 연구 과제
         </Text>
 
@@ -198,7 +198,7 @@ export default function ProfessorResearchProjectsPage() {
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
               <FlexBox $align="center" $gap={12} $marginBottom={12}>
-                <Text typo="22" bold>
+                <Text typo="22" bold style={{ display: "block" }}>
                   딥러닝 기반 자연어 처리 시스템 개발
                 </Text>
                 <StatusBadge $status="진행중">진행중</StatusBadge>
@@ -206,57 +206,59 @@ export default function ProfessorResearchProjectsPage() {
               <Text
                 typo="16"
                 color="txt-black-darker"
-                style={{ marginBottom: "8px" }}
+                style={{ marginBottom: "8px", display: "block" }}
               >
                 연구 기관: 한국연구재단 | 과제 번호: NRF-2023-001234
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 연구 기간: 2023.03.01 ~ 2026.02.28 (3년)
               </Text>
             </div>
-            <Button text="상세보기" size="l" colorVariant="blue" />
+            <Box style={{ display: "flex", gap: "12px" }}>
+              <Button text="상세보기" size="l" colorVariant="blue" />
+            </Box>
           </FlexBox>
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   총 연구비
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   300백만원
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   집행률
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   45%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   참여 연구원
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   5명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   진행률
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   60%
                 </Text>
               </div>
             </Box>
           </Box>
           <Box marginTop={16}>
-            <Text typo="16" bold style={{ marginBottom: "8px" }}>
+            <Text typo="16" bold style={{ marginBottom: "8px", display: "block" }}>
               주요 성과
             </Text>
-            <Text typo="16" color="txt-black-darker">
+            <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
               - SCI 논문 게재 2편 (IF 3.5, 4.2)
               <br />
               - 국제 학회 발표 3건
@@ -269,7 +271,7 @@ export default function ProfessorResearchProjectsPage() {
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
               <FlexBox $align="center" $gap={12} $marginBottom={12}>
-                <Text typo="22" bold>
+                <Text typo="22" bold style={{ display: "block" }}>
                   블록체인 기반 분산 시스템 연구
                 </Text>
                 <StatusBadge $status="진행중">진행중</StatusBadge>
@@ -277,57 +279,59 @@ export default function ProfessorResearchProjectsPage() {
               <Text
                 typo="16"
                 color="txt-black-darker"
-                style={{ marginBottom: "8px" }}
+                style={{ marginBottom: "8px", display: "block" }}
               >
-                연구 기관: 정보통신기획평가원 | 과제 번호: IITP-2024-002345
+                연구 기관: 정보통신기획평가원 | 과제 번호: IITP-2025-002345
               </Text>
-              <Text typo="16" color="txt-black-darker">
-                연구 기간: 2024.01.01 ~ 2025.12.31 (2년)
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
+                연구 기간: 2025.01.01 ~ 2026.12.31 (2년)
               </Text>
             </div>
-            <Button text="상세보기" size="l" colorVariant="blue" />
+            <Box style={{ display: "flex", gap: "12px" }}>
+              <Button text="상세보기" size="l" colorVariant="blue" />
+            </Box>
           </FlexBox>
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   총 연구비
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   100백만원
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   집행률
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   25%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   참여 연구원
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   3명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   진행률
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   30%
                 </Text>
               </div>
             </Box>
           </Box>
           <Box marginTop={16}>
-            <Text typo="16" bold style={{ marginBottom: "8px" }}>
+            <Text typo="16" bold style={{ marginBottom: "8px", display: "block" }}>
               주요 성과
             </Text>
-            <Text typo="16" color="txt-black-darker">
+            <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
               - 국내 학회 논문 1편
               <br />- 프로토타입 시스템 개발 완료
             </Text>
@@ -338,7 +342,7 @@ export default function ProfessorResearchProjectsPage() {
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
               <FlexBox $align="center" $gap={12} $marginBottom={12}>
-                <Text typo="22" bold>
+                <Text typo="22" bold style={{ display: "block" }}>
                   AI 윤리 및 책임성 연구
                 </Text>
                 <StatusBadge $status="진행중">진행중</StatusBadge>
@@ -346,57 +350,59 @@ export default function ProfessorResearchProjectsPage() {
               <Text
                 typo="16"
                 color="txt-black-darker"
-                style={{ marginBottom: "8px" }}
+                style={{ marginBottom: "8px", display: "block" }}
               >
-                연구 기관: 교육부 | 과제 번호: MOE-2024-003456
+                연구 기관: 교육부 | 과제 번호: MOE-2025-003456
               </Text>
-              <Text typo="16" color="txt-black-darker">
-                연구 기간: 2024.03.01 ~ 2024.12.31 (1년)
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
+                연구 기간: 2025.03.01 ~ 2025.12.31 (1년)
               </Text>
             </div>
-            <Button text="상세보기" size="l" colorVariant="blue" />
+            <Box style={{ display: "flex", gap: "12px" }}>
+              <Button text="상세보기" size="l" colorVariant="blue" />
+            </Box>
           </FlexBox>
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   총 연구비
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   50백만원
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   집행률
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   35%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   참여 연구원
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   2명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   진행률
                 </Text>
-                <Text typo="22" bold style={{ marginTop: "6px" }}>
+                <Text typo="22" bold style={{ marginTop: "6px", display: "block" }}>
                   40%
                 </Text>
               </div>
             </Box>
           </Box>
           <Box marginTop={16}>
-            <Text typo="16" bold style={{ marginBottom: "8px" }}>
+            <Text typo="16" bold style={{ marginBottom: "8px", display: "block" }}>
               주요 성과
             </Text>
-            <Text typo="16" color="txt-black-darker">
+            <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
               - 연구 보고서 2편 제출
               <br />- 정책 제안서 작성 중
             </Text>
@@ -405,7 +411,7 @@ export default function ProfessorResearchProjectsPage() {
       </Section>
 
       <Section id="budget-status">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           연구비 집행 현황
         </Text>
         <TableContainer>
@@ -457,7 +463,7 @@ export default function ProfessorResearchProjectsPage() {
       </Section>
 
       <Section id="recent-expenses">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           최근 연구비 사용 내역
         </Text>
         <TableContainer>
@@ -474,7 +480,7 @@ export default function ProfessorResearchProjectsPage() {
             </thead>
             <tbody>
               <tr>
-                <td>2024.02.14</td>
+                <td>2025.08.14</td>
                 <td>딥러닝 NLP 시스템</td>
                 <td>연구 장비</td>
                 <td>15,000,000원</td>
@@ -488,7 +494,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.12</td>
+                <td>2025.08.12</td>
                 <td>블록체인 분산 시스템</td>
                 <td>인건비</td>
                 <td>3,500,000원</td>
@@ -502,7 +508,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.10</td>
+                <td>2025.08.10</td>
                 <td>딥러닝 NLP 시스템</td>
                 <td>출장비</td>
                 <td>2,800,000원</td>
@@ -516,7 +522,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.08</td>
+                <td>2025.08.08</td>
                 <td>AI 윤리 연구</td>
                 <td>재료비</td>
                 <td>850,000원</td>
@@ -530,7 +536,7 @@ export default function ProfessorResearchProjectsPage() {
                 </td>
               </tr>
               <tr>
-                <td>2024.02.05</td>
+                <td>2025.08.05</td>
                 <td>블록체인 분산 시스템</td>
                 <td>회의비</td>
                 <td>450,000원</td>
@@ -546,30 +552,30 @@ export default function ProfessorResearchProjectsPage() {
             </tbody>
           </Table>
         </TableContainer>
-        <Box marginTop={20}>
+        <Box marginTop={20} style={{ display: "flex", gap: "12px" }}>
           <Button text="연구비 사용 신청" size="l" colorVariant="blue" />
         </Box>
       </Section>
 
       <Section id="publications">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           연구 성과 - 논문
         </Text>
         <InfoBox>
-          <Text typo="18" bold style={{ marginBottom: "12px" }}>
+          <Text typo="18" bold style={{ marginBottom: "12px", display: "block" }}>
             Deep Learning Approaches for Natural Language Understanding
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "8px" }}
+            style={{ marginBottom: "8px", display: "block" }}
           >
             저자: 김교수, 이박사, 박연구원
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "8px" }}
+            style={{ marginBottom: "8px", display: "block" }}
           >
             학술지: IEEE Transactions on Neural Networks and Learning Systems
             (IF: 4.2)
@@ -577,72 +583,78 @@ export default function ProfessorResearchProjectsPage() {
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "12px" }}
+            style={{ marginBottom: "12px", display: "block" }}
           >
-            게재일: 2024.01.15
+            게재일: 2025.01.15
           </Text>
-          <Button text="논문 보기" size="m" colorVariant="blue" />
+          <Box style={{ display: "flex", gap: "12px" }}>
+            <Button text="논문 보기" size="m" colorVariant="blue" />
+          </Box>
         </InfoBox>
 
         <InfoBox>
-          <Text typo="18" bold style={{ marginBottom: "12px" }}>
+          <Text typo="18" bold style={{ marginBottom: "12px", display: "block" }}>
             Blockchain-based Distributed System Architecture
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "8px" }}
+            style={{ marginBottom: "8px", display: "block" }}
           >
             저자: 김교수, 최연구원
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "8px" }}
+            style={{ marginBottom: "8px", display: "block" }}
           >
             학술지: Journal of Systems Architecture (IF: 3.5)
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "12px" }}
+            style={{ marginBottom: "12px", display: "block" }}
           >
-            게재일: 2023.11.20
+            게재일: 2024.11.20
           </Text>
-          <Button text="논문 보기" size="m" colorVariant="blue" />
+          <Box style={{ display: "flex", gap: "12px" }}>
+            <Button text="논문 보기" size="m" colorVariant="blue" />
+          </Box>
         </InfoBox>
 
         <InfoBox>
-          <Text typo="18" bold style={{ marginBottom: "12px" }}>
+          <Text typo="18" bold style={{ marginBottom: "12px", display: "block" }}>
             Ethical Considerations in AI Systems
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "8px" }}
+            style={{ marginBottom: "8px", display: "block" }}
           >
             저자: 김교수, 정박사
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "8px" }}
+            style={{ marginBottom: "8px", display: "block" }}
           >
             학술지: AI & Society (IF: 2.8)
           </Text>
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "12px" }}
+            style={{ marginBottom: "12px", display: "block" }}
           >
-            게재일: 2023.09.30
+            게재일: 2024.09.30
           </Text>
-          <Button text="논문 보기" size="m" colorVariant="blue" />
+          <Box style={{ display: "flex", gap: "12px" }}>
+            <Button text="논문 보기" size="m" colorVariant="blue" />
+          </Box>
         </InfoBox>
       </Section>
 
       <Section id="reports">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           연구 보고서 제출
         </Text>
         <TableContainer>
@@ -660,7 +672,7 @@ export default function ProfessorResearchProjectsPage() {
               <tr>
                 <td>딥러닝 기반 자연어 처리 시스템 개발</td>
                 <td>연차 보고서</td>
-                <td>2024.03.01</td>
+                <td>2025.09.01</td>
                 <td style={{ color: "#f57c00", fontWeight: "bold" }}>작성중</td>
                 <td>
                   <Button text="작성하기" size="s" colorVariant="blue" />
@@ -669,7 +681,7 @@ export default function ProfessorResearchProjectsPage() {
               <tr>
                 <td>블록체인 기반 분산 시스템 연구</td>
                 <td>분기 보고서</td>
-                <td>2024.04.01</td>
+                <td>2025.10.01</td>
                 <td style={{ color: "#616161" }}>미작성</td>
                 <td>
                   <Button text="작성하기" size="s" colorVariant="blue" />
@@ -678,7 +690,7 @@ export default function ProfessorResearchProjectsPage() {
               <tr>
                 <td>AI 윤리 및 책임성 연구</td>
                 <td>중간 보고서</td>
-                <td>2024.02.10</td>
+                <td>2025.08.10</td>
                 <td style={{ color: "#388e3c", fontWeight: "bold" }}>
                   제출완료
                 </td>
@@ -692,7 +704,7 @@ export default function ProfessorResearchProjectsPage() {
       </Section>
 
       <Section id="quick-actions">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           빠른 작업
         </Text>
         <FlexBox $gap={16} $wrap="wrap">
