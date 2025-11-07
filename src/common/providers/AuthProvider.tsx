@@ -12,9 +12,12 @@ import React, {
   useState,
 } from "react";
 import { getUserInfo, login as loginApi } from "../api/auth";
+import { CHANNEL_PLUGIN_KEY } from "../constants";
 import {
+  getAnonymousMemberId,
   loadCurrentUser,
   loadToken,
+  regenerateAnonymousMemberId,
   removeToken,
   saveCurrentUser,
   saveToken,
@@ -38,9 +41,8 @@ interface AuthContextType {
   logout: () => void;
   profile: Profile | undefined;
   fetchUserInfo: () => Promise<void>;
+  getMemberId: () => string;
 }
-
-const CHANNEL_PLUGIN_KEY = "e0685dec-5603-4aee-b4b1-8f2e75d9befd";
 
 // "-veil-id"와 "-session"이 포함된 모든 쿠키와 로컬스토리지 삭제
 const clearChannelData = () => {
@@ -90,19 +92,30 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     setIsLoading(false);
   }, []);
 
+  // memberId 가져오기: 로그인 시 profile.id, 비로그인 시 익명 ID
+  const getMemberId = useCallback((): string => {
+    if (profile?.id) {
+      return profile.id;
+    }
+    return getAnonymousMemberId();
+  }, [profile]);
+
   useEffect(() => {
     // Channel Talk
     ChannelService.loadScript();
+
+    const memberId = getMemberId();
+
     ChannelService.boot({
       pluginKey: CHANNEL_PLUGIN_KEY,
-      memberId: profile?.id ? profile?.id.toString() : undefined,
+      memberId: memberId,
       profile: profile
         ? {
             name: profile.name,
           }
         : undefined,
     });
-  }, [profile]);
+  }, [profile, getMemberId]);
 
   const login = useCallback(async (data: LoginData) => {
     try {
@@ -181,6 +194,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     saveCurrentUser(null);
     removeToken();
 
+    // 익명 memberId 재생성 (로그아웃 후 새로운 익명 사용자로)
+    regenerateAnonymousMemberId();
+
     // 채널톡 쿠키 및 로컬스토리지 완전 삭제
     clearChannelData();
   }, []);
@@ -193,8 +209,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
       logout,
       profile,
       fetchUserInfo,
+      getMemberId,
     }),
-    [profile, login, logout, fetchUserInfo, isLoading]
+    [profile, login, logout, fetchUserInfo, getMemberId, isLoading]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
