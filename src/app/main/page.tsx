@@ -45,41 +45,6 @@ export default function Home() {
 
       <Section>
         <Text typo="22" bold>
-          빠른 메뉴
-        </Text>
-        <Grid>
-          <Card>
-            <Text typo="16" bold style={{ marginBottom: "8px" }}>
-              수강 신청
-            </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "12px" }}>
-              2024학년도 1학기 수강 신청
-            </Text>
-            <Button text="바로가기" size="m" colorVariant="blue" />
-          </Card>
-          <Card>
-            <Text typo="16" bold style={{ marginBottom: "8px" }}>
-              성적 조회
-            </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "12px" }}>
-              학기별 성적 확인
-            </Text>
-            <Button text="바로가기" size="m" colorVariant="blue" />
-          </Card>
-          <Card>
-            <Text typo="16" bold style={{ marginBottom: "8px" }}>
-              장학금 신청
-            </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "12px" }}>
-              2024학년도 장학금 신청
-            </Text>
-            <Button text="바로가기" size="m" colorVariant="blue" />
-          </Card>
-        </Grid>
-      </Section>
-
-      <Section>
-        <Text typo="22" bold>
           최근 공지사항
         </Text>
         <Box marginTop={16}>
@@ -87,7 +52,11 @@ export default function Home() {
             <Text typo="16" bold>
               2024학년도 1학기 수강신청 일정 안내
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               2024.02.15
             </Text>
           </Card>
@@ -95,7 +64,11 @@ export default function Home() {
             <Text typo="16" bold>
               장학금 신청 기간 연장 안내
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               2024.02.14
             </Text>
           </Card>
@@ -103,7 +76,11 @@ export default function Home() {
             <Text typo="16" bold>
               학사일정 변경 안내
             </Text>
-            <Text typo="14" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginTop: "8px" }}
+            >
               2024.02.13
             </Text>
           </Card>
