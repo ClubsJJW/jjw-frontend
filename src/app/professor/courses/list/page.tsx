@@ -94,16 +94,16 @@ export default function ProfessorCoursesListPage() {
   return (
     <PageContainer>
       <PageHeader>
-        <Text typo="36" bold>
+        <Text typo="36" bold style={{ display: "block" }}>
           담당 강의 관리
         </Text>
-        <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px" }}>
+        <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px", display: "block" }}>
           2024학년도 1학기 담당 강의 목록입니다
         </Text>
       </PageHeader>
 
       <Section id="summary">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           강의 현황
         </Text>
         <StatBox>
@@ -111,11 +111,11 @@ export default function ProfessorCoursesListPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               담당 강의
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               5과목
             </Text>
           </StatCard>
@@ -123,11 +123,11 @@ export default function ProfessorCoursesListPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               총 수강 인원
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               187명
             </Text>
           </StatCard>
@@ -135,11 +135,11 @@ export default function ProfessorCoursesListPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               총 강의 시수
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               15시간
             </Text>
           </StatCard>
@@ -147,11 +147,11 @@ export default function ProfessorCoursesListPage() {
             <Text
               typo="16"
               color="txt-black-darker"
-              style={{ marginBottom: "12px" }}
+              style={{ marginBottom: "12px", display: "block" }}
             >
               미제출 과제
             </Text>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               23건
             </Text>
           </StatCard>
@@ -159,21 +159,21 @@ export default function ProfessorCoursesListPage() {
       </Section>
 
       <Section id="course-list">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           담당 강의 목록
         </Text>
 
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="22" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px", display: "block" }}>
                 컴퓨터 개론 (CS101-01)
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 월/수 10:00-11:30 | 공학관 101호
               </Text>
             </div>
-            <Box>
+            <Box style={{ display: "flex", gap: "12px" }}>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
@@ -181,34 +181,34 @@ export default function ProfessorCoursesListPage() {
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   수강 인원
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   45명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   출석률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   92%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   과제 제출률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   88%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   강의 평가
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   4.5/5.0
                 </Text>
               </div>
@@ -219,14 +219,14 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="22" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px", display: "block" }}>
                 자료구조 (CS201-01)
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 화/목 13:00-14:30 | 공학관 201호
               </Text>
             </div>
-            <Box>
+            <Box style={{ display: "flex", gap: "12px" }}>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
@@ -234,34 +234,34 @@ export default function ProfessorCoursesListPage() {
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   수강 인원
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   50명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   출석률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   89%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   과제 제출률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   85%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   강의 평가
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   4.3/5.0
                 </Text>
               </div>
@@ -272,14 +272,14 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="22" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px", display: "block" }}>
                 알고리즘 (CS202-01)
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 월/수 13:00-14:30 | 공학관 301호
               </Text>
             </div>
-            <Box>
+            <Box style={{ display: "flex", gap: "12px" }}>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
@@ -287,34 +287,34 @@ export default function ProfessorCoursesListPage() {
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   수강 인원
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   42명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   출석률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   94%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   과제 제출률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   91%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   강의 평가
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   4.7/5.0
                 </Text>
               </div>
@@ -325,14 +325,14 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="22" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px", display: "block" }}>
                 데이터베이스 (CS302-01)
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 월/수 15:00-16:30 | 공학관 501호
               </Text>
             </div>
-            <Box>
+            <Box style={{ display: "flex", gap: "12px" }}>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
@@ -340,34 +340,34 @@ export default function ProfessorCoursesListPage() {
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   수강 인원
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   40명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   출석률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   87%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   과제 제출률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   82%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   강의 평가
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   4.4/5.0
                 </Text>
               </div>
@@ -378,14 +378,14 @@ export default function ProfessorCoursesListPage() {
         <CourseCard>
           <FlexBox $justify="space-between" $align="start" $marginBottom={16}>
             <div>
-              <Text typo="22" bold style={{ marginBottom: "8px" }}>
+              <Text typo="22" bold style={{ marginBottom: "8px", display: "block" }}>
                 캡스톤 디자인 (CS401-01)
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 금 13:00-17:00 | 공학관 801호
               </Text>
             </div>
-            <Box>
+            <Box style={{ display: "flex", gap: "12px" }}>
               <Button text="강의실 입장" size="l" colorVariant="blue" />
               <Button text="관리" size="l" colorVariant="monochrome-dark" />
             </Box>
@@ -393,34 +393,34 @@ export default function ProfessorCoursesListPage() {
           <Box marginTop={20} padding={20} backgroundColor="bg-black-lighter">
             <Box>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   수강 인원
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   10명
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   출석률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   98%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   과제 제출률
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   95%
                 </Text>
               </div>
               <div>
-                <Text typo="14" color="txt-black-darker">
+                <Text typo="14" color="txt-black-darker" style={{ display: "block" }}>
                   강의 평가
                 </Text>
-                <Text typo="18" bold style={{ marginTop: "4px" }}>
+                <Text typo="18" bold style={{ marginTop: "4px", display: "block" }}>
                   4.9/5.0
                 </Text>
               </div>
@@ -430,7 +430,7 @@ export default function ProfessorCoursesListPage() {
       </Section>
 
       <Section id="schedule">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           주간 강의 일정
         </Text>
         <TableContainer>
@@ -524,16 +524,16 @@ export default function ProfessorCoursesListPage() {
       </Section>
 
       <Section id="pending-tasks">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           처리해야 할 업무
         </Text>
         <InfoBox>
           <FlexBox $justify="space-between" $align="center">
             <div>
-              <Text typo="18" bold style={{ marginBottom: "8px" }}>
+              <Text typo="18" bold style={{ marginBottom: "8px", display: "block" }}>
                 미채점 중간고사 답안
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 자료구조 (CS201-01) - 50건
               </Text>
             </div>
@@ -543,10 +543,10 @@ export default function ProfessorCoursesListPage() {
         <InfoBox>
           <FlexBox $justify="space-between" $align="center">
             <div>
-              <Text typo="18" bold style={{ marginBottom: "8px" }}>
+              <Text typo="18" bold style={{ marginBottom: "8px", display: "block" }}>
                 미확인 과제 제출물
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 알고리즘 (CS202-01) - 42건
               </Text>
             </div>
@@ -556,10 +556,10 @@ export default function ProfessorCoursesListPage() {
         <InfoBox>
           <FlexBox $justify="space-between" $align="center">
             <div>
-              <Text typo="18" bold style={{ marginBottom: "8px" }}>
+              <Text typo="18" bold style={{ marginBottom: "8px", display: "block" }}>
                 결석 사유서 검토
               </Text>
-              <Text typo="16" color="txt-black-darker">
+              <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
                 컴퓨터 개론 (CS101-01) - 8건
               </Text>
             </div>
@@ -569,7 +569,7 @@ export default function ProfessorCoursesListPage() {
       </Section>
 
       <Section id="announcements">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           강의 공지사항 관리
         </Text>
         <TableContainer>
@@ -620,7 +620,7 @@ export default function ProfessorCoursesListPage() {
       </Section>
 
       <Section id="actions">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           빠른 작업
         </Text>
         <FlexBox $gap={16} $wrap="wrap">

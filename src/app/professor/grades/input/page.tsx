@@ -97,32 +97,32 @@ export default function ProfessorGradesInputPage() {
   return (
     <PageContainer>
       <PageHeader>
-        <Text typo="36" bold>
+        <Text typo="36" bold style={{ display: "block" }}>
           성적 입력
         </Text>
-        <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px" }}>
+        <Text typo="18" color="txt-black-darker" style={{ marginTop: "12px", display: "block" }}>
           학생들의 성적을 입력하고 관리합니다
         </Text>
       </PageHeader>
 
       <Section id="guidelines">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           📢 성적 입력 안내
         </Text>
         <InfoBox>
-          <Text typo="16" bold style={{ marginBottom: "12px" }}>
+          <Text typo="16" bold style={{ marginBottom: "12px", display: "block" }}>
             1. 성적 입력 기간
           </Text>
-          <Text typo="16" color="txt-black-darker">
+          <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
             - 중간고사: 2024년 4월 1일 ~ 4월 10일
             <br />- 기말고사: 2024년 6월 10일 ~ 6월 20일
           </Text>
         </InfoBox>
         <InfoBox>
-          <Text typo="16" bold style={{ marginBottom: "12px" }}>
+          <Text typo="16" bold style={{ marginBottom: "12px", display: "block" }}>
             2. 성적 평가 기준
           </Text>
-          <Text typo="16" color="txt-black-darker">
+          <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
             - 출석: 20%
             <br />
             - 과제: 20%
@@ -132,10 +132,10 @@ export default function ProfessorGradesInputPage() {
           </Text>
         </InfoBox>
         <InfoBox>
-          <Text typo="16" bold style={{ marginBottom: "12px" }}>
+          <Text typo="16" bold style={{ marginBottom: "12px", display: "block" }}>
             3. 등급 분포
           </Text>
-          <Text typo="16" color="txt-black-darker">
+          <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
             - A등급(A+, A0): 30% 이내
             <br />
             - B등급(B+, B0): 40% 이내
@@ -143,10 +143,10 @@ export default function ProfessorGradesInputPage() {
           </Text>
         </InfoBox>
         <InfoBox>
-          <Text typo="16" bold style={{ marginBottom: "12px" }}>
+          <Text typo="16" bold style={{ marginBottom: "12px", display: "block" }}>
             4. 유의사항
           </Text>
-          <Text typo="16" color="txt-black-darker">
+          <Text typo="16" color="txt-black-darker" style={{ display: "block" }}>
             - 입력 후 반드시 임시저장 버튼을 눌러주세요
             <br />
             - 최종 제출 후에는 수정이 불가능합니다
@@ -156,11 +156,11 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="course-select">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           강의 선택
         </Text>
         <FilterBox>
-          <Text typo="16" style={{ minWidth: "100px" }}>
+          <Text typo="16" style={{ minWidth: "100px", display: "block" }}>
             담당 강의
           </Text>
           <Select
@@ -172,7 +172,7 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="grade-distribution">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           현재 등급 분포 - 자료구조 (CS201-01)
         </Text>
         <TableContainer>
@@ -238,7 +238,7 @@ export default function ProfessorGradesInputPage() {
           </Table>
         </TableContainer>
         <Box marginTop={24} padding={24} backgroundColor="bg-white-normal">
-          <Text typo="16">
+          <Text typo="16" style={{ display: "block" }}>
             <strong>A등급 비율:</strong> 30% (기준 이내) |{" "}
             <strong>B등급 비율:</strong> 44% (기준 초과 4%) |{" "}
             <strong>평균 평점:</strong> 3.42
@@ -247,7 +247,7 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="grade-input">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           성적 입력 - 자료구조 (CS201-01)
         </Text>
         <TableContainer>
@@ -467,27 +467,27 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="grade-adjustment">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           일괄 성적 조정
         </Text>
         <Box padding={24} backgroundColor="bg-white-normal">
-          <Text typo="16" style={{ marginBottom: "20px" }}>
+          <Text typo="16" style={{ marginBottom: "20px", display: "block" }}>
             전체 학생의 점수를 일괄적으로 조정할 수 있습니다
           </Text>
           <FlexBox $gap={16} $align="center" $marginBottom={16}>
-            <Text typo="16" style={{ minWidth: "120px" }}>
+            <Text typo="16" style={{ minWidth: "120px", display: "block" }}>
               조정 방식
             </Text>
             <Select placeholder="점수 더하기" style={{ width: "200px" }} />
           </FlexBox>
           <FlexBox $gap={16} $align="center" $marginBottom={16}>
-            <Text typo="16" style={{ minWidth: "120px" }}>
+            <Text typo="16" style={{ minWidth: "120px", display: "block" }}>
               조정 점수
             </Text>
             <TextField placeholder="예: 5" style={{ width: "200px" }} />
           </FlexBox>
           <FlexBox $gap={16} $align="center" $marginBottom={24}>
-            <Text typo="16" style={{ minWidth: "120px" }}>
+            <Text typo="16" style={{ minWidth: "120px", display: "block" }}>
               적용 대상
             </Text>
             <Select placeholder="전체 학생" style={{ width: "200px" }} />
@@ -497,7 +497,7 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="statistics">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           성적 통계
         </Text>
         <TableContainer>
@@ -553,19 +553,19 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="save">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           성적 저장 및 제출
         </Text>
         <Box padding={24} backgroundColor="bg-white-normal">
           <Text
             typo="16"
             color="txt-black-darker"
-            style={{ marginBottom: "24px" }}
+            style={{ marginBottom: "24px", display: "block" }}
           >
             입력한 성적을 확인하고 저장하세요. 최종 제출 후에는 수정이
             불가능합니다.
           </Text>
-          <Box>
+          <Box style={{ display: "flex", gap: "12px" }}>
             <Button text="임시 저장" size="xl" colorVariant="monochrome-dark" />
             <Button text="미리보기" size="xl" colorVariant="monochrome-light" />
             <Button text="최종 제출" size="xl" colorVariant="blue" />
@@ -574,7 +574,7 @@ export default function ProfessorGradesInputPage() {
       </Section>
 
       <Section id="history">
-        <Text typo="24" bold style={{ marginBottom: "20px" }}>
+        <Text typo="24" bold style={{ marginBottom: "20px", display: "block" }}>
           성적 입력 이력
         </Text>
         <TableContainer>
