@@ -5,6 +5,20 @@ export interface MenuItem {
   children?: MenuItem[];
 }
 
+// 구현된 페이지 경로 목록
+export const IMPLEMENTED_PAGES = [
+  "/main",
+  "/my",
+  "/student-support/scholarship/apply",
+  "/academic/registration/apply",
+  "/academic/grades/semester",
+  "/facilities/library/room",
+  "/certificates/enrollment",
+  "/professor/courses/list",
+  "/professor/grades/input",
+  "/professor/research/projects",
+];
+
 export const navigationMenu: MenuItem[] = [
   {
     id: "home",
