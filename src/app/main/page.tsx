@@ -37,19 +37,27 @@ export default function Home() {
       <PageHeader>
         {isLoggedIn ? (
           <>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               {profile?.name}님, 환영합니다!
             </Text>
-            <Text typo="16" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="16"
+              color="txt-black-darker"
+              style={{ marginTop: "8px", display: "block" }}
+            >
               대학 포털 시스템에 로그인되었습니다
             </Text>
           </>
         ) : (
           <>
-            <Text typo="30" bold>
+            <Text typo="30" bold style={{ display: "block" }}>
               환영합니다!
             </Text>
-            <Text typo="16" color="txt-black-darker" style={{ marginTop: "8px" }}>
+            <Text
+              typo="16"
+              color="txt-black-darker"
+              style={{ marginTop: "8px", display: "block" }}
+            >
               대학 포털 시스템입니다
             </Text>
           </>
@@ -57,42 +65,42 @@ export default function Home() {
       </PageHeader>
 
       <Section>
-        <Text typo="22" bold>
+        <Text typo="22" bold style={{ display: "block" }}>
           최근 공지사항
         </Text>
         <Box marginTop={16}>
           <Card style={{ marginBottom: "12px" }}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               2024학년도 1학기 수강신청 일정 안내
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               2024.02.15
             </Text>
           </Card>
           <Card style={{ marginBottom: "12px" }}>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               장학금 신청 기간 연장 안내
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               2024.02.14
             </Text>
           </Card>
           <Card>
-            <Text typo="16" bold>
+            <Text typo="16" bold style={{ display: "block" }}>
               학사일정 변경 안내
             </Text>
             <Text
               typo="14"
               color="txt-black-darker"
-              style={{ marginTop: "8px" }}
+              style={{ marginTop: "8px", display: "block" }}
             >
               2024.02.13
             </Text>
