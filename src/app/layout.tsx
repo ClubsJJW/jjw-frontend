@@ -1,4 +1,5 @@
 import { MainLayout } from "@/common/components/MainLayout";
+import { ProtectedRoute } from "@/common/components/ProtectedRoute";
 import { AuthProvider } from "@/common/providers/AuthProvider";
 import { BezierProvider } from "@/common/providers/ClientProvider";
 import StyledComponentsRegistry from "@/common/providers/StyledComponentsRegistry";
@@ -15,7 +16,9 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <AuthProvider>
             <BezierProvider>
-              <MainLayout>{children}</MainLayout>
+              <ProtectedRoute>
+                <MainLayout>{children}</MainLayout>
+              </ProtectedRoute>
             </BezierProvider>
           </AuthProvider>
         </StyledComponentsRegistry>
