@@ -11,6 +11,7 @@
   "dependencies": {
     "@channel.io/bezier-icons": "^0.50.0",
     "@channel.io/bezier-react": "^3.5.1",
+    "@channel.io/channel-web-sdk-loader": "^2.0.2",
     "@types/styled-components": "^5.1.35",
     "axios": "^1.13.2",
     "next": "16.0.1",
