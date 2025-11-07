@@ -227,7 +227,7 @@ export default function ScholarshipApplyPage() {
             <Text typo="14" bold style={{ marginBottom: "8px", display: "block" }}>
               이름
             </Text>
-            <TextField value="John Doe" disabled />
+            <TextField value="김채널" disabled />
           </FormRow>
 
           <FormRow>
