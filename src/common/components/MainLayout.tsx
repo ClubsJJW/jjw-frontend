@@ -4,6 +4,7 @@ import { navigationMenu } from "@/common/types/navigation";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { BASE_URL } from "../constants";
+import { useAuth } from "../providers/AuthProvider";
 import { connectSSE } from "../utils/sseUtil";
 import { Sidebar } from "./Sidebar";
 
@@ -30,8 +31,14 @@ interface MainLayoutProps {
 }
 
 export function MainLayout({ children }: MainLayoutProps) {
+  const { getMemberId } = useAuth();
+
   useEffect(() => {
-    let eventSource = new EventSource(`${BASE_URL}`);
+    // memberId 가져오기 (로그인: profile.id, 비로그인: 익명 ID)
+    const memberId = getMemberId();
+
+    // SSE 연결 시 memberId를 쿼리 파라미터로 전달
+    let eventSource = new EventSource(`${BASE_URL}?memberId=${memberId}`);
 
     const callConnectSSE = async () => {
       eventSource = await connectSSE(eventSource, (rawData) => {
@@ -44,7 +51,7 @@ export function MainLayout({ children }: MainLayoutProps) {
     return () => {
       eventSource?.close();
     };
-  }, []);
+  }, [getMemberId]);
 
   return (
     <LayoutContainer>
