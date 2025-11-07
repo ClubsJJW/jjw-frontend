@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { MenuItem } from "@/common/types/navigation";
+import { ChevronDownIcon, ChevronRightIcon } from "@channel.io/bezier-icons";
+import { Text } from "@channel.io/bezier-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import styled from "styled-components";
-import { Text } from "@channel.io/bezier-react";
-import { ChevronDownIcon, ChevronRightIcon } from "@channel.io/bezier-icons";
-import { MenuItem } from "@/common/types/navigation";
 
 // 구현된 페이지 경로 목록
 const IMPLEMENTED_PAGES = [
   "/main",
+  "/my",
   "/student-support/scholarship/apply",
   "/academic/registration/apply",
   "/academic/grades/semester",
@@ -118,7 +119,7 @@ function hasAnyImplementedPage(item: MenuItem): boolean {
     return true;
   }
   if (item.children) {
-    return item.children.some(child => hasAnyImplementedPage(child));
+    return item.children.some((child) => hasAnyImplementedPage(child));
   }
   return false;
 }
@@ -128,14 +129,20 @@ function MenuItemComponent({ item, depth = 0 }: MenuItemComponentProps) {
   const pathname = usePathname();
   const isActive = pathname === item.path;
   const hasChildren = item.children && item.children.length > 0;
-  const isImplemented = item.path ? IMPLEMENTED_PAGES.includes(item.path) : false;
-  const hasImplementedChildren = hasChildren ? hasAnyImplementedPage(item) : false;
+  const isImplemented = item.path
+    ? IMPLEMENTED_PAGES.includes(item.path)
+    : false;
+  const hasImplementedChildren = hasChildren
+    ? hasAnyImplementedPage(item)
+    : false;
 
   if (hasChildren) {
     return (
       <MenuItemContainer $depth={depth}>
         <MenuButton $isActive={isActive} onClick={() => setIsOpen(!isOpen)}>
-          <MenuLabel style={{ color: hasImplementedChildren ? 'inherit' : '#adb5bd' }}>
+          <MenuLabel
+            style={{ color: hasImplementedChildren ? "inherit" : "#adb5bd" }}
+          >
             {item.label}
           </MenuLabel>
           <IconWrapper>
@@ -145,7 +152,11 @@ function MenuItemComponent({ item, depth = 0 }: MenuItemComponentProps) {
         {isOpen && (
           <MenuList>
             {item.children!.map((child) => (
-              <MenuItemComponent key={child.id} item={child} depth={depth + 1} />
+              <MenuItemComponent
+                key={child.id}
+                item={child}
+                depth={depth + 1}
+              />
             ))}
           </MenuList>
         )}
