@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import { Text, Button, Box, Select } from "@channel.io/bezier-react";
 
@@ -70,20 +68,6 @@ const FilterBox = styled.div`
 `;
 
 export default function SemesterGradesPage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -96,7 +80,7 @@ export default function SemesterGradesPage() {
       </PageHeader>
 
       <Section id="filter">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           조회 조건
         </Text>
         <FilterBox>
@@ -113,12 +97,16 @@ export default function SemesterGradesPage() {
       </Section>
 
       <Section id="summary">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           학기 성적 요약
         </Text>
         <StatBox>
           <StatCard>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginBottom: "8px" }}
+            >
               신청 학점
             </Text>
             <Text typo="24" bold>
@@ -126,7 +114,11 @@ export default function SemesterGradesPage() {
             </Text>
           </StatCard>
           <StatCard>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginBottom: "8px" }}
+            >
               취득 학점
             </Text>
             <Text typo="24" bold>
@@ -134,18 +126,26 @@ export default function SemesterGradesPage() {
             </Text>
           </StatCard>
           <StatCard>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginBottom: "8px" }}
+            >
               학기 평점
             </Text>
-            <Text typo="24" bold color="txt-blue-normal">
+            <Text typo="24" bold>
               3.85
             </Text>
           </StatCard>
           <StatCard>
-            <Text typo="14" color="txt-black-darker" style={{ marginBottom: "8px" }}>
+            <Text
+              typo="14"
+              color="txt-black-darker"
+              style={{ marginBottom: "8px" }}
+            >
               누적 평점
             </Text>
-            <Text typo="24" bold color="txt-blue-normal">
+            <Text typo="24" bold>
               3.72
             </Text>
           </StatCard>
@@ -153,7 +153,7 @@ export default function SemesterGradesPage() {
       </Section>
 
       <Section id="grades-2024-1">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           2024학년도 1학기 성적
         </Text>
         <TableContainer>
@@ -230,7 +230,7 @@ export default function SemesterGradesPage() {
       </Section>
 
       <Section id="grades-2023-2">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           2023학년도 2학기 성적
         </Text>
         <TableContainer>
@@ -307,7 +307,7 @@ export default function SemesterGradesPage() {
       </Section>
 
       <Section id="grade-stats">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           학기별 평점 추이
         </Text>
         <TableContainer>
@@ -345,7 +345,7 @@ export default function SemesterGradesPage() {
       </Section>
 
       <Section id="credit-summary">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           이수 학점 현황
         </Text>
         <TableContainer>
@@ -401,19 +401,21 @@ export default function SemesterGradesPage() {
       </Section>
 
       <Section id="actions">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           기타 기능
         </Text>
-        <Box
-          padding={20}
-          backgroundColor="bg-white-normal"
-          borderRadius="8px"
-          display="flex"
-          gap={12}
-        >
+        <Box padding={20} backgroundColor="bg-white-normal">
           <Button text="성적 증명서 발급" size="l" colorVariant="blue" />
-          <Button text="성적 이의 신청" size="l" colorVariant="monochrome-dark" />
-          <Button text="PDF 다운로드" size="l" colorVariant="monochrome-light" />
+          <Button
+            text="성적 이의 신청"
+            size="l"
+            colorVariant="monochrome-dark"
+          />
+          <Button
+            text="PDF 다운로드"
+            size="l"
+            colorVariant="monochrome-light"
+          />
         </Box>
       </Section>
     </PageContainer>

@@ -44,7 +44,7 @@ export default function Home() {
       </PageHeader>
 
       <Section>
-        <Text typo="20" bold>
+        <Text typo="22" bold>
           빠른 메뉴
         </Text>
         <Grid>
@@ -79,7 +79,7 @@ export default function Home() {
       </Section>
 
       <Section>
-        <Text typo="20" bold>
+        <Text typo="22" bold>
           최근 공지사항
         </Text>
         <Box marginTop={16}>

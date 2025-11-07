@@ -1,9 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
-import { Text, Button, Box, TextField, Checkbox } from "@channel.io/bezier-react";
+import {
+  Text,
+  Button,
+  Box,
+  TextField,
+  Checkbox,
+} from "@channel.io/bezier-react";
 
 const PageContainer = styled.div``;
 
@@ -73,20 +77,6 @@ const FilterRow = styled.div`
 `;
 
 export default function CourseRegistrationPage() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo) {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [searchParams]);
-
   return (
     <PageContainer>
       <PageHeader>
@@ -99,7 +89,7 @@ export default function CourseRegistrationPage() {
       </PageHeader>
 
       <Section id="schedule">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           📅 수강신청 일정
         </Text>
         <TableContainer>
@@ -149,7 +139,7 @@ export default function CourseRegistrationPage() {
       </Section>
 
       <Section id="guidelines">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           📢 수강신청 유의사항
         </Text>
         <InfoBox>
@@ -193,7 +183,7 @@ export default function CourseRegistrationPage() {
       </Section>
 
       <Section id="search">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           강의 검색
         </Text>
         <SearchBox>
@@ -207,7 +197,10 @@ export default function CourseRegistrationPage() {
             <Text typo="14" style={{ minWidth: "80px" }}>
               과목 코드
             </Text>
-            <TextField placeholder="과목 코드를 입력하세요" style={{ flex: 1 }} />
+            <TextField
+              placeholder="과목 코드를 입력하세요"
+              style={{ flex: 1 }}
+            />
           </FilterRow>
           <FilterRow>
             <Text typo="14" style={{ minWidth: "80px" }}>
@@ -228,7 +221,7 @@ export default function CourseRegistrationPage() {
       </Section>
 
       <Section id="course-list">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           개설 강좌 목록
         </Text>
         <TableContainer>
@@ -267,7 +260,12 @@ export default function CourseRegistrationPage() {
                 <td>화/목 13:00-14:30 / 공학관 201</td>
                 <td>50/50</td>
                 <td>
-                  <Button text="마감" size="s" colorVariant="monochrome-light" disabled />
+                  <Button
+                    text="마감"
+                    size="s"
+                    colorVariant="monochrome-light"
+                    disabled
+                  />
                 </td>
               </tr>
               <tr>
@@ -339,7 +337,12 @@ export default function CourseRegistrationPage() {
                 <td>화/목 16:30-18:00 / 공학관 801</td>
                 <td>45/45</td>
                 <td>
-                  <Button text="마감" size="s" colorVariant="monochrome-light" disabled />
+                  <Button
+                    text="마감"
+                    size="s"
+                    colorVariant="monochrome-light"
+                    disabled
+                  />
                 </td>
               </tr>
               <tr>
@@ -363,7 +366,12 @@ export default function CourseRegistrationPage() {
                 <td>수 14:00-16:00 / 인문관 201</td>
                 <td>25/25</td>
                 <td>
-                  <Button text="마감" size="s" colorVariant="monochrome-light" disabled />
+                  <Button
+                    text="마감"
+                    size="s"
+                    colorVariant="monochrome-light"
+                    disabled
+                  />
                 </td>
               </tr>
             </tbody>
@@ -372,7 +380,7 @@ export default function CourseRegistrationPage() {
       </Section>
 
       <Section id="my-cart">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           관심 과목 (장바구니)
         </Text>
         <TableContainer>
@@ -411,13 +419,13 @@ export default function CourseRegistrationPage() {
             </tbody>
           </Table>
         </TableContainer>
-        <Box marginTop={16} padding={16} backgroundColor="bg-white-normal" borderRadius="8px">
+        <Box marginTop={16} padding={16} backgroundColor="bg-white-normal">
           <Text typo="14">총 학점: 6학점</Text>
         </Box>
       </Section>
 
       <Section id="my-courses">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           신청 완료 과목
         </Text>
         <TableContainer>
@@ -435,7 +443,10 @@ export default function CourseRegistrationPage() {
             </thead>
             <tbody>
               <tr>
-                <td colSpan={7} style={{ textAlign: "center", padding: "40px" }}>
+                <td
+                  colSpan={7}
+                  style={{ textAlign: "center", padding: "40px" }}
+                >
                   <Text typo="14" color="txt-black-darker">
                     신청한 과목이 없습니다
                   </Text>
@@ -447,11 +458,15 @@ export default function CourseRegistrationPage() {
       </Section>
 
       <Section id="confirm">
-        <Text typo="20" bold style={{ marginBottom: "16px" }}>
+        <Text typo="22" bold style={{ marginBottom: "16px" }}>
           수강신청 확정
         </Text>
-        <Box padding={20} backgroundColor="bg-white-normal" borderRadius="8px">
-          <Text typo="14" color="txt-black-darker" style={{ marginBottom: "16px" }}>
+        <Box padding={20} backgroundColor="bg-white-normal">
+          <Text
+            typo="14"
+            color="txt-black-darker"
+            style={{ marginBottom: "16px" }}
+          >
             장바구니의 과목들을 한 번에 신청하시겠습니까?
             <br />
             신청 후에도 수강정정 기간에 변경이 가능합니다.
