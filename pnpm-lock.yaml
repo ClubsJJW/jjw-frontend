@@ -14,6 +14,9 @@ importers:
       '@channel.io/bezier-react':
         specifier: ^3.5.1
         version: 3.5.1(@channel.io/bezier-icons@0.50.0(react@18.3.1))(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@channel.io/channel-web-sdk-loader':
+        specifier: ^2.0.2
+        version: 2.0.2
       '@types/styled-components':
         specifier: ^5.1.35
         version: 5.1.35
@@ -145,6 +148,9 @@ packages:
 
   '@channel.io/bezier-tokens@0.3.2':
     resolution: {integrity: sha512-8cwnGC74OaoKkHMVIOvDuESZRxUrahu4X96TusW67iC+stszcBbsH7qL535RGso9ZTCrx9JA8KDLfNHhs+cKEg==}
+
+  '@channel.io/channel-web-sdk-loader@2.0.2':
+    resolution: {integrity: sha512-43xRJX+BUjb5vRw5A/LDkgE9syJYTPERf7xo49Fz5MMpA9UtzPWHWyzN2QU1/tTT2uu5tpxapT2BgMx6FfP2qg==}
 
   '@emnapi/core@1.7.0':
     resolution: {integrity: sha512-pJdKGq/1iquWYtv1RRSljZklxHCOCAJFJrImO5ZLKPJVJlVUcs8yFwNQlqS0Lo8xT1VAXXTCZocF9n26FWEKsw==}
@@ -2564,6 +2570,8 @@ snapshots:
       - '@types/react-dom'
 
   '@channel.io/bezier-tokens@0.3.2': {}
+
+  '@channel.io/channel-web-sdk-loader@2.0.2': {}
 
   '@emnapi/core@1.7.0':
     dependencies:
