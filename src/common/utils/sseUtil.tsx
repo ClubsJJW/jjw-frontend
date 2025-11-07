@@ -1,18 +1,19 @@
 export const connectSSE = async (
   eventSource: EventSource,
   onMessage: (data: string) => void,
-  onConnect?: () => void,
+  // onConnect?: () => void,
   onError?: (error: Event) => void
 ) => {
-  // 연결 성공 이벤트
-  eventSource.addEventListener("connect", (event: MessageEvent) => {
-    if (event.data === "SSE 연결이 완료되었습니다.") {
-      onConnect?.(); // 연결 완료 콜백 호출
+  // // 연결 성공 이벤트
+  eventSource.addEventListener("heartbeat", (event: MessageEvent) => {
+    if (event.data.type === "heartbeat") {
+      console.log("SSE 연결 성공");
     }
   });
 
   // 메시지 수신 이벤트
-  eventSource.addEventListener("message", (event: MessageEvent) => {
+  eventSource.addEventListener("redirect", (event: MessageEvent) => {
+    console.log("redirect", event);
     onMessage(event.data); // 메시지 처리
   });
 
